@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   background: #0f0f0f;
   color: #eaeaea;
   line-height: 1.6;
@@ -72,3 +72,4 @@ footer {
   opacity: 0.5;
   font-size: 0.8rem;
 }
+
