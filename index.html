@@ -4,7 +4,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
- <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <title>curiousrobert</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
@@ -22,36 +22,49 @@
 <main class="container">
   <section class="hero">
     <h1>Multidisciplinary Designer</h1>
-    <p>Graphic · 3D · Motion · Interactive</p>
+    <p>Graphic | 3D | Motion | Interactive</p>
   </section>
 
   <section class="featured">
     <h2>Selected Work</h2>
 
     <div class="grid">
-      <a href="projects.html" class="card">
-        <h3>Project 1</h3>
-        <p>Interactive · Game · Visual</p>
-      </a>
+      <div class="card" data-href="projects.html" data-tx="0" data-ty="0">
+        <div class="card-media">
+          <img src="assets/project_1.png" alt="Project 1" loading="lazy">
+          <div class="card-overlay">
+            <h3>Project 1</h3>
+            <p>Interactive | Game | Visual</p>
+          </div>
+        </div>
+        <button class="card-open" type="button">Open</button>
+      </div>
 
-      <a href="projects.html" class="card">
-        <h3>Photo Manipulation Ads</h3>
-        <p>Concept · Composition</p>
-      </a>
+      <div class="card" data-href="projects.html" data-tx="0" data-ty="0">
+        <div class="card-media">
+          <img src="assets/project_2.png" alt="Photo Manipulation Ads" loading="lazy">
+          <div class="card-overlay">
+            <h3>Photo Manipulation Ads</h3>
+            <p>Concept | Composition</p>
+          </div>
+        </div>
+        <button class="card-open" type="button">Open</button>
+      </div>
 
-      <a href="projects.html" class="card">
-        <h3>3D Product Study</h3>
-        <p>Blender · Rendering</p>
-      </a>
+      <div class="card" data-href="projects.html" data-tx="0" data-ty="0">
+        <div class="card-media">
+          <img src="assets/project_3.png" alt="3D Product Study" loading="lazy">
+          <div class="card-overlay">
+            <h3>3D Product Study</h3>
+            <p>Blender | Rendering</p>
+          </div>
+        </div>
+        <button class="card-open" type="button">Open</button>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <p>© 2025 Marin I. Robert</p>
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
-
-
