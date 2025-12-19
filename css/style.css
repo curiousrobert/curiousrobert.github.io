@@ -166,6 +166,68 @@ h2,h3,h4,h5,h6 {
 .card, .info-card, .banner, .portfolio .grid .col img, .info-box {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
+
+.portfolio-scroll .portfolio-item-single img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-slider .swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1rem;
+}
+.portfolio-slider .swiper-button-prev,
+.portfolio-slider .swiper-button-next {
+    color: var(--bs-black);
+}
+.portfolio-slider .swiper-pagination-bullet-active {
+    background: var(--bs-primary);
+}
+.portfolio-stack {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.portfolio-stack .tall-slide {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1rem;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+.portfolio-preview-thumb {
+    height: 220px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+    .banner.p-5 {
+        padding: 2rem !important;
+    }
+    .info-card .section-block {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    .info-card {
+        border-radius: 1rem;
+    }
+    .info-card .info-entries {
+        gap: 1.25rem;
+    }
+    .navbar .icon {
+        padding-inline: 1rem !important;
+    }
+    .display-2 {
+        font-size: 2.5rem;
+    }
+    .section-header h2.display-4 {
+        font-size: 2.25rem;
+    }
+}
 .info-card h3 {
     margin: 0;
 }
