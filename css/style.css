@@ -262,6 +262,12 @@ h2,h3,h4,h5,h6 {
     display: block;
     margin: 0 auto;
 }
+.project-video {
+    width: 30%;
+    max-width: 360px;
+    display: block;
+    margin: 0 auto;
+}
 .navbar-toggler .menu {
     color: #111111 !important;
 }
@@ -269,6 +275,10 @@ h2,h3,h4,h5,h6 {
 @media (max-width: 767.98px) {
     .project-media {
         width: 100%;
+    }
+    .project-video {
+        width: 100%;
+        max-width: none;
     }
 }
 
