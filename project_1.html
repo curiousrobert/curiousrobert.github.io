@@ -9,7 +9,8 @@
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Inter:wght@400;600;700;800;900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Inter:wght@400;600;700;800;900&display=swap"
     rel="stylesheet">
 
   <!-- Bootstrap -->
@@ -21,6 +22,9 @@
 
   <!--style sheet-->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lottie (robust) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </head>
 
 <body>
@@ -59,7 +63,8 @@
             </svg>
           </span>
         </button>
-        <div class="offcanvas offcanvas-end text-white bg-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end text-white bg-black" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <button type="button" class="btn-close btn-close-white ms-3" data-bs-dismiss="offcanvas"
               aria-label="Close"></button>
@@ -70,10 +75,12 @@
                 <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page" href="project_1.html">Projects</a>
+                <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page"
+                  href="project_1.html">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="index.html#contact-email">Contact 
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                  href="index.html#contact-email">Contact
                 </a>
               </li>
             </ul>
@@ -91,7 +98,8 @@
             <p class="text-uppercase ls-4 fw-semibold text-muted mb-2">Case study</p>
             <h1 class="fw-bold mb-3">Patch Vase Collection</h1>
             <p class="text-dark-emphasis fs-5 mb-0">
-              A handcrafted clay object designed to live between decoration and function&mdash;used as a vase, candle holder, or small plant pot.
+              A handcrafted clay object designed to live between decoration and function&mdash;used as a vase, candle
+              holder, or small plant pot.
             </p>
           </div>
         </div>
@@ -103,9 +111,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="rounded-4 shadow-sm bg-white d-flex justify-content-center align-items-center p-4">
-              <lottie-player src="./animations/post_1.json" background="transparent" speed="1" loop autoplay
-                style="width:100%; max-width:900px; min-height:320px;">
-              </lottie-player>
+              <!-- Lottie container (robust lottie-web) -->
+              <div id="lottie-post-1" style="width:100%; max-width:900px; min-height:320px;"></div>
             </div>
           </div>
         </div>
@@ -167,10 +174,12 @@
           <div class="col-lg-8">
             <h3 class="fw-bold mb-3">Concept & Process</h3>
             <p class="text-dark-emphasis">
-              The project explores multifunctional decorative objects and the idea of repair as a visible, celebrated element. Each form was designed to feel calm, tactile, and adaptable to modern interiors.
+              The project explores multifunctional decorative objects and the idea of repair as a visible, celebrated
+              element. Each form was designed to feel calm, tactile, and adaptable to modern interiors.
             </p>
             <p class="text-dark-emphasis mb-0">
-              The visual language avoids perfection, focusing instead on texture, material presence, and subtle variation between pieces.
+              The visual language avoids perfection, focusing instead on texture, material presence, and subtle variation
+              between pieces.
             </p>
           </div>
         </div>
@@ -204,7 +213,8 @@
               Thank you for checking out my portfolio!
             </p>
             <div class="social-links">
-              <a href="https://www.behance.net/curiousrobert" class="text-decoration-none" target="_blank" rel="noopener">
+              <a href="https://www.behance.net/curiousrobert" class="text-decoration-none" target="_blank"
+                rel="noopener">
                 <svg class="behance" width="24" height="24">
                   <use xlink:href="#behance"></use>
                 </svg>
@@ -217,7 +227,8 @@
             Just feel free to contact if you wanna collaborate with me, or simply have a conversation.
           </p>
           <h3>
-            <a href="mailto:curiousrobertmail@gmail.com" class="text-white text-decoration-none" id="contact-email">curiousrobertmail@gmail.com</a>
+            <a href="mailto:curiousrobertmail@gmail.com" class="text-white text-decoration-none"
+              id="contact-email">curiousrobertmail@gmail.com</a>
           </h3>
         </div>
       </div>
@@ -234,8 +245,9 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/lightbox.min.js"></script>
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-  <script src="js/lottie-player.js"></script>
+  <!-- removed: <script src="js/lottie-player.js"></script> -->
   <script src="js/script.js"></script>
+
   <script>
     (function initPage() {
       function initScrollTop() {
@@ -247,12 +259,31 @@
         });
       }
 
+      // init lottie AFTER DOM exists
+      function initLottie() {
+        var el = document.getElementById('lottie-post-1');
+        if (!el || typeof lottie === 'undefined') return;
+
+        lottie.loadAnimation({
+          container: el,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'animations/post_1.json'
+        });
+      }
+
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initScrollTop, { once: true });
+        document.addEventListener('DOMContentLoaded', function () {
+          initScrollTop();
+          initLottie();
+        }, { once: true });
       } else {
         initScrollTop();
+        initLottie();
       }
     })();
   </script>
 </body>
+
 </html>
