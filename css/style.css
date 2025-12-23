@@ -367,3 +367,9 @@ a:hover {
     background-color: var(--bs-pagination-active-bg);
     border-color: var(--bs-pagination-active-border-color);
 }
+
+.lottie-scale {
+  width: 100%;
+  max-width: 540px; /* 60% of 900px */
+  min-height: 200px;
+}
