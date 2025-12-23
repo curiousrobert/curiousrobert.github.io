@@ -263,7 +263,7 @@ h2,h3,h4,h5,h6 {
     margin: 0 auto;
 }
 .project-video {
-    width: 30%;
+    width: 20%;
     max-width: 360px;
     display: block;
     margin: 0 auto;
@@ -402,3 +402,4 @@ a:hover {
   max-width: 540px; /* 60% of 900px */
   min-height: 200px;
 }
+
