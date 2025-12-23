@@ -370,6 +370,7 @@ a:hover {
 
 .lottie-scale {
   width: 100%;
-  max-width: 540px; /* 60% of 900px */
-  min-height: 200px;
+  max-width: 270px; /* 60% of 900px */
+  min-height: 100px;
 }
+
