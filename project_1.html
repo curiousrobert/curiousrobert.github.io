@@ -25,6 +25,19 @@
 
   <!-- Lottie (robust) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+  <!-- ONLY for responsive centered video (no ratio wrapper) -->
+  <style>
+    /* keeps your existing class but makes it responsive + centered */
+    .project-video {
+      width: 100%;
+      height: auto;
+      max-width: 960px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -36,7 +49,7 @@
     </symbol>
     <symbol id="menu" viewBox="0 0 24 24">
       <path fill="currentColor"
-        d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2z" />
+        d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 0 1 0-2z" />
     </symbol>
   </svg>
 
@@ -106,7 +119,7 @@
       </div>
     </section>
 
-    <!-- LOTTIE SECTION: added spiral under first -->
+    <!-- LOTTIE SECTION: spiral under first -->
     <section class="pb-5">
       <div class="container">
         <div class="row justify-content-center">
@@ -120,17 +133,15 @@
       </div>
     </section>
 
-    <!-- VIDEO SECTION: made responsive -->
+    <!-- VIDEO SECTION: no extra container wrapper, centered via CSS above -->
     <section class="pb-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <div class="ratio ratio-16x9">
-              <video class="w-100 h-100 rounded-4 shadow-sm project-video" controls preload="metadata" playsinline loop autoplay muted>
-                <source src="animations/video_1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+            <video class="rounded-4 shadow-sm project-video" controls preload="metadata" playsinline loop autoplay muted>
+              <source src="animations/video_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
