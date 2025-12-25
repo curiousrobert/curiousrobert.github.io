@@ -204,6 +204,30 @@ h2,h3,h4,h5,h6 {
     object-fit: cover;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
+.portfolio-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.portfolio-preview::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.28), rgba(255,255,255,0.08), rgba(255,255,255,0.28));
+    opacity: 0.5;
+    transform: translateX(-100%);
+    animation: shimmer 1.15s linear infinite;
+    pointer-events: none;
+}
+.portfolio-preview.is-loaded::before {
+    opacity: 0;
+    animation: none;
+}
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+}
 
 /* Responsive tweaks */
 @media (max-width: 767.98px) {
@@ -263,7 +287,7 @@ h2,h3,h4,h5,h6 {
     margin: 0 auto;
 }
 .project-video {
-    width: 40%;
+    width: 30%;
     max-width: 360px;
     display: block;
     margin: 0 auto;
@@ -402,5 +426,3 @@ a:hover {
   max-width: 540px; /* 60% of 900px */
   min-height: 200px;
 }
-
-
