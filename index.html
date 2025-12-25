@@ -138,24 +138,20 @@
     </nav>
   </header>
 
-  <section class="py-4">
+  <section class="py-4 stats-section">
     <div class="container">
-      <div class="row text-uppercase rounded-4 p-3 justify-content-center gy-3">
-        <div class="col-10 col-sm-6 col-md-5 col-lg-4">
+      <div class="row text-uppercase rounded-4 p-3 justify-content-center gy-3 stats-block">
+        <div class="col-10 col-sm-6 col-md-5 col-lg-4 stat-card">
           <div class="d-flex align-items-center gap-3 justify-content-center text-center">
-            <h2 class="display-1 text-black mb-0 fw-bold">
-              3
-            </h2>
+            <h2 class="display-1 text-black mb-0 fw-bold stat-number" data-target="3">3</h2>
             <p class="text-dark justify-content-center m-0 ls-4 fw-semibold">
               Projects <br> completed
             </p>
           </div>
         </div>
-        <div class="col-10 col-sm-6 col-md-5 col-lg-4">
+        <div class="col-10 col-sm-6 col-md-5 col-lg-4 stat-card">
           <div class="d-flex align-items-center gap-3 justify-content-center text-center">
-            <h2 class="display-1 text-black mb-0 fw-bold">
-              1
-            </h2>
+            <h2 class="display-1 text-black mb-0 fw-bold stat-number" data-target="1">1</h2>
             <p class="text-dark justify-content-center m-0 ls-4 fw-semibold">
               year <br> experience
             </p>
@@ -174,17 +170,17 @@
       </div>
       <div class="row g-4 justify-content-center">
         <div class="col-12 col-md-6 col-lg-4">
-          <a href="project_1.html" class="text-decoration-none d-block">
+          <a href="project_1.html" class="text-decoration-none d-block portfolio-preview">
             <img src="images/ad_4_shape.png" alt="Portfolio preview 1" class="img-fluid rounded-4 portfolio-preview-thumb w-100 h-20">
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <a href="project_1.html" class="text-decoration-none d-block">
+          <a href="project_1.html" class="text-decoration-none d-block portfolio-preview">
             <img src="images/ad_5_shape.png" alt="Portfolio preview 2" class="img-fluid rounded-4 portfolio-preview-thumb w-100 h-100">
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <a href="project_1.html" class="text-decoration-none d-block">
+          <a href="project_1.html" class="text-decoration-none d-block portfolio-preview">
             <img src="images/ad_6_shape.png" alt="Portfolio preview 3" class="img-fluid rounded-4 portfolio-preview-thumb w-100 h-20">
           </a>
         </div>
@@ -289,6 +285,8 @@
   <script type="text/javascript" src="js/lightbox.min.js"></script>
 
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
