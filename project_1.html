@@ -26,9 +26,8 @@
   <!-- Lottie (robust) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 
-  <!-- ONLY for responsive centered video (no ratio wrapper) -->
+  <!-- responsive video helper (keeps no wrapper + centered) -->
   <style>
-    /* keeps your existing class but makes it responsive + centered */
     .project-video {
       width: 100%;
       height: auto;
@@ -36,6 +35,12 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* optional: make sure lottie blocks don't overflow */
+    .lottie-scale {
+      width: 100%;
+      max-width: 520px;
     }
   </style>
 </head>
@@ -49,7 +54,7 @@
     </symbol>
     <symbol id="menu" viewBox="0 0 24 24">
       <path fill="currentColor"
-        d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 0 1 0-2z" />
+        d="M4 6a1 1 0 0 1 1-1h14a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 0 1 0 2h8a1 1 0 0 1 0-2z" />
     </symbol>
   </svg>
 
@@ -119,21 +124,25 @@
       </div>
     </section>
 
-    <!-- LOTTIE SECTION: spiral under first -->
+    <!-- LOTTIE: side-by-side on desktop, stacked on phones -->
     <section class="pb-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <div class="d-flex flex-column align-items-center gap-4">
-              <div id="lottie-post-1" class="lottie-scale"></div>
-              <div id="lottie-spiral" class="lottie-scale"></div>
+            <div class="row g-4 justify-content-center align-items-center">
+              <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div id="lottie-post-1" class="lottie-scale"></div>
+              </div>
+              <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div id="lottie-spiral" class="lottie-scale"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- VIDEO SECTION: no extra container wrapper, centered via CSS above -->
+    <!-- VIDEO (centered, responsive; no extra wrapper) -->
     <section class="pb-5">
       <div class="container">
         <div class="row justify-content-center">
