@@ -22,6 +22,17 @@
       --secondary-font: "Inter", sans-serif;
     }
 
+    /* Fix to remove default Bootstrap burger lines and show custom SVG */
+    .navbar-toggler {
+        box-shadow: none !important;
+    }
+    .navbar-toggler-icon {
+        background-image: none !important; /* Removes the default BS lines */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .project-video {
       width: 100%;
       height: auto;
@@ -100,7 +111,7 @@
 <body>
   <svg style="display: none;">
     <symbol id="behance" viewBox="0 0 24 24"><path fill="currentColor" d="M20.07 6.35H15v1.41h5.09ZM19 16.05a2.23 2.23 0 0 1-1.3.37a2.23 2.23 0 0 1-1.7-.54a2.49 2.49 0 0 1-.62-1.76H22a6.47 6.47 0 0 0-.17-2a5.08 5.08 0 0 0-.8-1.73a4.17 4.17 0 0 0-1.42-1.21a4.37 4.37 0 0 0-2-.45a4.88 4.88 0 0 0-1.9.37a4.51 4.51 0 0 0-1.47 1a4.4 4.4 0 0 0-.95 1.52a5.4 5.4 0 0 0-.33 1.91a5.52 5.52 0 0 0 .32 1.94a4.46 4.46 0 0 0 .88 1.53a4 4 0 0 0 1.46 1a5.2 5.2 0 0 0 1.94.34a4.77 4.77 0 0 0 2.64-.7a4.21 4.21 0 0 0 1.63-2.35h-2.21a1.54 1.54 0 0 1-.62.76m-3.43-4.12a1.87 1.87 0 0 1 1-1.14a2.28 2.28 0 0 1 1-.2a1.73 1.73 0 0 1 1.36.49a2.91 2.91 0 0 1 .63 1.45h-4.15a3 3 0 0 1 .11-.6Zm-5.29-.48a3.06 3.06 0 0 0 1.28-1a2.72 2.72 0 0 0 .43-1.58a3.28 3.28 0 0 0-.29-1.48a2.4 2.4 0 0 0-.82-1a3.24 3.24 0 0 0-1.27-.52a7.54 7.54 0 0 0-1.64-.16H2v12.58h6.1a6.55 6.55 0 0 0 1.65-.21a4.55 4.55 0 0 0 1.43-.65a3.13 3.13 0 0 0 1-1.14a3.41 3.41 0 0 0 .37-1.65a3.47 3.47 0 0 0-.57-2a3 3 0 0 0-1.75-1.19ZM4.77 7.86h2.59a4.17 4.17 0 0 1 .71.06a1.64 1.64 0 0 1 .61.22a1.05 1.05 0 0 1 .42.44a1.42 1.42 0 0 1 .16.72a1.36 1.36 0 0 1-.47 1.15a2 2 0 0 1-1.22.35h-2.8Zm4.84 7.44a1.28 1.28 0 0 1-.45.5a2 2 0 0 1-.65.26a3.33 3.33 0 0 1-.78.08h-3v-3.45h3a2.4 2.4 0 0 1 1.45.41a1.65 1.65 0 0 1 .54 1.39a1.77 1.77 0 0 1-.11.81"/></symbol>
-    <symbol id="menu" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6a1 1 0 0 1 1-1h14a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 0 1 0 2h8a1 1 0 0 1 0-2z"/></symbol>
+    <symbol id="menu" viewBox="0 0 24 24"><path fill="black" d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2z"/></symbol>
   </svg>
 
   <header id="top" class="position-sticky top-0 start-0" style="z-index:100;">
@@ -108,17 +119,30 @@
       <div class="container-fluid">
         <div class="d-flex align-items-center">
           <a class="navbar-brand fw-bold text-uppercase" href="index.html">curiousrobert</a>
+          <div class="icon px-5 d-none d-md-block">
+            <a href="https://www.behance.net/curiousrobert" class="text-decoration-none" target="_blank">
+              <svg width="24" height="24"><use xlink:href="#behance"></use></svg>
+            </a>
+          </div>
         </div>
+
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-            <svg class="text-primary" width="32" height="32"><use xlink:href="#menu"></use></svg>
+          <span class="navbar-toggler-icon">
+            <svg class="text-primary menu" width="32" height="32">
+              <use xlink:href="#menu"></use>
+            </svg>
+          </span>
         </button>
+
         <div class="offcanvas offcanvas-end text-white bg-black" tabindex="-1" id="offcanvasNavbar">
-          <div class="offcanvas-header"><button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button></div>
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white ms-3" data-bs-dismiss="offcanvas"></button>
+          </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav p-4">
-              <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link text-white active" href="#">Projects</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="index.html#contact-email">Contact</a></li>
+              <li class="nav-item"><a class="nav-link text-white text-uppercase ls-4" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link text-white text-uppercase ls-4 active" href="project_1.html">Projects</a></li>
+              <li class="nav-item"><a class="nav-link text-white text-uppercase ls-4" href="index.html#contact-email">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -149,7 +173,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <h3 class="fw-bold">The Vision</h3>
-            <p>The project explores the concept of "functional art." By creating a 3D asset that lives between decoration and utility, the marketing strategy focused on <strong>organic imperfection</strong>. Every ad was designed to feel calm and tactile, moving away from high-gloss perfection to celebrate material presence.</p>
+            <p>The project explores the concept of "functional art." By creating a 3D asset that lives between decoration and utility, the marketing strategy focused on <strong>organic imperfection</strong>.</p>
           </div>
         </div>
       </div>
@@ -172,7 +196,7 @@
           <div class="col-lg-6 mt-4 mt-lg-0 font-specimen">
             <span class="ad-label">Typography System</span>
             <h1>Work Sans / Inter</h1>
-            <p class="text-muted">A blend of a strong, geometric heading font with a highly readable sans-serif for body copy and digital interface elements.</p>
+            <p class="text-muted">A blend of a strong, geometric heading font with a highly readable sans-serif.</p>
           </div>
         </div>
       </div>
@@ -190,7 +214,6 @@
         </div>
         <div class="row mt-5 justify-content-center">
           <div class="col-lg-10 text-center">
-            <span class="ad-label text-white-50">Promotional Video</span>
             <video class="rounded-4 shadow project-video" controls preload="metadata" loop autoplay muted>
               <source src="animations/video_1.mp4" type="video/mp4">
             </video>
@@ -207,15 +230,12 @@
         </div>
         <div class="row g-5 justify-content-center">
           <div class="col-lg-10">
-            <span class="ad-label text-center">01 // Key Visual</span>
             <img src="images/ad_1.png" class="img-fluid rounded-4 shadow-sm" alt="Ad 1">
           </div>
           <div class="col-lg-10">
-            <span class="ad-label text-center">02 // Product Detail Ad</span>
             <img src="images/ad_2.png" class="img-fluid rounded-4 shadow-sm" alt="Ad 2">
           </div>
           <div class="col-lg-10">
-            <span class="ad-label text-center">03 // Lifestyle Integration</span>
             <img src="images/ad_3.png" class="img-fluid rounded-4 shadow-sm" alt="Ad 3">
           </div>
         </div>
@@ -224,7 +244,6 @@
 
     <section class="py-5 border-top">
       <div class="container text-center">
-        <p class="text-muted mb-4">Interested in the process behind the 3D assets?</p>
         <div class="d-flex justify-content-center gap-3">
           <a href="index.html" class="btn btn-dark rounded-pill px-4">Back to Home</a>
           <a href="#top" class="btn btn-outline-dark rounded-pill px-4">Top of page</a>
