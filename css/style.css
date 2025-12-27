@@ -426,3 +426,108 @@ a:hover {
   max-width: 540px; /* 60% of 900px */
   min-height: 200px;
 }
+
+/*----------------------------------------------*/
+/* 3.6 Color Showcase Component
+/*----------------------------------------------*/
+
+.cv-portfolio-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.cv-portfolio-showcase .cv-flex-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.cv-portfolio-showcase .cv-card {
+    position: relative;
+    width: 65px;
+    height: 95px;
+    background-color: var(--clr);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+    /* Minimal Float Animation to match your subtle portfolio style */
+    animation: cvMinimalFloat 6s ease-in-out infinite;
+}
+
+.cv-portfolio-showcase .cv-card:nth-child(even) {
+    animation-delay: 2s;
+}
+
+@keyframes cvMinimalFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Labels: Using your Work Sans font */
+.cv-portfolio-showcase .cv-card::before {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    color: var(--clr);
+    font-family: var(--body-font);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cv-portfolio-showcase .cv-card::after {
+    content: attr(data-hex);
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    color: var(--clr);
+    font-family: monospace;
+    font-size: 10px;
+    filter: brightness(0.8);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Hover Interactivity */
+.cv-portfolio-showcase .cv-card:hover {
+    transform: scale(1.25) translateY(-15px) !important;
+    animation-play-state: paused;
+    z-index: 10;
+    box-shadow: 0 15px 30px -10px var(--clr);
+    opacity: 1;
+}
+
+.cv-portfolio-showcase .cv-card:hover::before,
+.cv-portfolio-showcase .cv-card:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Proximity Scaling (The Wave Effect) */
+.cv-portfolio-showcase .cv-card:hover + .cv-card,
+.cv-portfolio-showcase .cv-card:has(+ .cv-card:hover) {
+    transform: scale(1.1) translateY(-5px);
+    opacity: 0.9;
+}
+
+/* Mobile Tweak: Stack them or reduce gap if needed */
+@media (max-width: 576px) {
+    .cv-portfolio-showcase .cv-flex-container {
+        gap: 20px;
+    }
+    .cv-portfolio-showcase .cv-card {
+        width: 50px;
+        height: 75px;
+    }
+}
