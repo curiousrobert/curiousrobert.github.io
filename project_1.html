@@ -104,6 +104,17 @@
       margin-bottom: 1rem;
       display: block;
     }
+
+    /* Marketing Asset specific styling for responsive behavior */
+    .asset-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+        .asset-item {
+            margin-bottom: 0;
+        }
+    }
   </style>
 </head>
 
@@ -115,23 +126,21 @@
     <symbol id="menu" viewBox="0 0 24 24"><path fill="black" d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2z" /></symbol>
   </svg>
 
-  <header class="position-sticky top-0 start-0" style="z-index:10;">
-    <nav class="navbar bg-white fixed-top">
+  <header class="position-sticky top-0 start-0" style="z-index:100;">
+    <nav class="navbar bg-white fixed-top shadow-sm">
       <div class="container-fluid">
         <div class="d-flex align-items-center g-4">
           <a class="navbar-brand d-flex" href="index.html">
             <span class="fw-bold text-uppercase">curiousrobert</span>
           </a>
-          <div class="icon px-5">
+          <div class="icon px-5 d-none d-sm-block">
             <a href="https://www.behance.net/curiousrobert" class="text-decoration-none" target="_blank" rel="noopener">
               <svg class="behance" width="24" height="24"><use xlink:href="#behance"></use></svg>
             </a>
           </div>
         </div>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-          <span class="navabar-toggler-icon">
             <svg class="text-primary menu" width="32" height="32"><use xlink:href="#menu"></use></svg>
-          </span>
         </button>
         <div class="offcanvas offcanvas-end text-white bg-black" tabindex="-1" id="offcanvasNavbar">
           <div class="offcanvas-header">
@@ -140,7 +149,7 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav flex-grow-1 p-4">
               <li class="nav-item"><a class="nav-link text-uppercase ls-4 text-white" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link text-uppercase ls-4 text-white active" href="project_1.html">Projects</a></li>
+              <li class="nav-item"><a class="nav-link text-uppercase ls-4 text-white active" href="#">Projects</a></li>
               <li class="nav-item"><a class="nav-link text-uppercase ls-4 text-white" href="index.html#contact-email">Contact</a></li>
             </ul>
           </div>
@@ -228,17 +237,17 @@
           <span class="ad-label">Marketing Assets</span>
           <h2 class="fw-bold">Advertising Campaign</h2>
         </div>
-        <div class="row g-5 justify-content-center">
-          <div class="col-lg-10">
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-4 asset-item">
             <span class="ad-label text-center">01 // Key Visual</span>
             <img src="images/ad_1.png" class="img-fluid rounded-4 shadow-sm" alt="Ad 1">
           </div>
-          <div class="col-lg-10">
-            <span class="ad-label text-center">02 // Product Detail Ad</span>
+          <div class="col-12 col-md-4 asset-item">
+            <span class="ad-label text-center">02 // Product Detail</span>
             <img src="images/ad_2.png" class="img-fluid rounded-4 shadow-sm" alt="Ad 2">
           </div>
-          <div class="col-lg-10">
-            <span class="ad-label text-center">03 // Lifestyle Integration</span>
+          <div class="col-12 col-md-4 asset-item">
+            <span class="ad-label text-center">03 // Lifestyle</span>
             <img src="images/ad_3.png" class="img-fluid rounded-4 shadow-sm" alt="Ad 3">
           </div>
         </div>
