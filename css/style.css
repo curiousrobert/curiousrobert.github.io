@@ -43,7 +43,7 @@ body , body  [data-bs-theme=light] {
     --bs-cyan: #F3F3F3;
     --bs-black: #111111; 
     --bs-white: #FFFFFF;
-    --bs-gray: #777777;   
+    --bs-gray: #777777;    
     --bs-info: #C3C3C3;
 }
 
@@ -106,6 +106,7 @@ body , body  [data-bs-theme=light] {
 
 body {
     font-family: var(--body-font);
+    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
 }
 
 /* font size */
@@ -390,17 +391,6 @@ p.a {
   }
 
 
-/* styles page */
-/* 
-a {
-    color: rgba(var(--bs-black), var(--bs-link-opacity, 1));
-    text-decoration: none;
-}
-
-a:hover {
-    --bs-black: var(--bs-link-hover-color-rgb);
-} */
-
 /* blog */
 
 .page-link {
@@ -421,10 +411,15 @@ a:hover {
     border-color: var(--bs-pagination-active-border-color);
 }
 
+/* OPTIMIZED LOTTIE CONTAINER */
 .lottie-scale {
   width: 100%;
-  max-width: 540px; /* 60% of 900px */
+  max-width: 540px; 
   min-height: 200px;
+  /* Optimization: GPU boost */
+  transform: translate3d(0,0,0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /*----------------------------------------------*/
@@ -454,7 +449,11 @@ a:hover {
     transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     
-    /* Minimal Float Animation to match your subtle portfolio style */
+    /* Optimization: Force GPU for smoother floating on mobile */
+    transform: translate3d(0,0,0);
+    will-change: transform;
+    backface-visibility: hidden;
+    
     animation: cvMinimalFloat 6s ease-in-out infinite;
 }
 
@@ -463,8 +462,8 @@ a:hover {
 }
 
 @keyframes cvMinimalFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -8px, 0); }
 }
 
 /* Labels: Using your Work Sans font */
@@ -473,7 +472,7 @@ a:hover {
     position: absolute;
     bottom: -40px;
     left: 50%;
-    transform: translateX(-50%) translateY(5px);
+    transform: translate3d(-50%, 5px, 0);
     color: var(--clr);
     font-family: var(--body-font);
     font-size: 11px;
@@ -483,6 +482,7 @@ a:hover {
     opacity: 0;
     transition: all 0.3s ease;
     white-space: nowrap;
+    will-change: transform, opacity;
 }
 
 .cv-portfolio-showcase .cv-card::after {
@@ -490,18 +490,19 @@ a:hover {
     position: absolute;
     bottom: -55px;
     left: 50%;
-    transform: translateX(-50%) translateY(5px);
+    transform: translate3d(-50%, 5px, 0);
     color: var(--clr);
     font-family: monospace;
     font-size: 10px;
     filter: brightness(0.8);
     opacity: 0;
     transition: all 0.3s ease;
+    will-change: transform, opacity;
 }
 
 /* Hover Interactivity */
 .cv-portfolio-showcase .cv-card:hover {
-    transform: scale(1.25) translateY(-15px) !important;
+    transform: scale(1.25) translate3d(0, -15px, 0) !important;
     animation-play-state: paused;
     z-index: 10;
     box-shadow: 0 15px 30px -10px var(--clr);
@@ -511,17 +512,17 @@ a:hover {
 .cv-portfolio-showcase .cv-card:hover::before,
 .cv-portfolio-showcase .cv-card:hover::after {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translate3d(-50%, 0, 0);
 }
 
 /* Proximity Scaling (The Wave Effect) */
 .cv-portfolio-showcase .cv-card:hover + .cv-card,
 .cv-portfolio-showcase .cv-card:has(+ .cv-card:hover) {
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(1.1) translate3d(0, -5px, 0);
     opacity: 0.9;
 }
 
-/* Mobile Tweak: Stack them or reduce gap if needed */
+/* Mobile Tweak */
 @media (max-width: 576px) {
     .cv-portfolio-showcase .cv-flex-container {
         gap: 20px;
