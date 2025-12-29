@@ -532,3 +532,114 @@ p.a {
         height: 75px;
     }
 }
+
+/* Container: Transparent for your website */
+.palette-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 20px 0; /* Vertical padding only */
+  justify-content: flex-start; /* Aligns to left like a typical portfolio grid */
+  background: none; 
+}
+
+/* The Card */
+.auto-layout-card {
+  background: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0px #000000;
+  border-radius: 12px;
+  padding: 24px;
+  width: 240px; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.15s ease-in-out;
+}
+
+.auto-layout-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 11px 11px 0px #000000;
+}
+
+.palette-title {
+  margin: 0;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.palette-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Individual Row */
+.palette-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.palette-row:hover {
+  background: #f3f3f3;
+}
+
+.swatch {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: 3px solid #000;
+  border-radius: 6px;
+}
+
+.hex-label {
+  font-family: 'Inter', monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: 75px;
+}
+
+/* Copy Icon styling */
+.copy-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #000;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.palette-row:hover .copy-icon {
+  opacity: 1; /* Show on hover */
+}
+
+/* Small "Copied!" notification style */
+.palette-row::after {
+  content: 'Copied!';
+  position: absolute;
+  right: 10px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: #00ffa0;
+  padding: 2px 5px;
+  border: 2px solid #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.palette-row.copied::after {
+  opacity: 1;
+}
