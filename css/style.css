@@ -265,19 +265,19 @@
 }
 
 .code-comment {
-  color: #6a9955;
+  color: #7A8A99;
 }
 
 .code-property {
-  color: #9cdcfe;
+  color: #8FB3D9;
 }
 
 .code-value {
-  color: #ce9178;
+  color: #C9A07B;
 }
 
 .code-bracket {
-  color: #ffd700;
+  color: #B9A66A;
 }
 
 /* Responsive Design */
@@ -313,3 +313,4 @@
     font-size: 12px;
   }
 }
+
