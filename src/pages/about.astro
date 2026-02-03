@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="about.curiousrobert">
   
-  <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex justify-between items-start mix-blend-difference text-[#F2F2F2]">
+  <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-start mix-blend-difference text-[#F2F2F2]">
     <div class="flex flex-col">
       <a href="/" class="text-2xl font-black tracking-widest leading-none hover:opacity-50 transition">
         curiousrobert<br/>
@@ -14,21 +14,21 @@ import Layout from '../layouts/Layout.astro';
       </span>
     </div>
 
-    <div class="flex gap-8 font-mono text-xs font-bold tracking-widest uppercase">
+    <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
       <a href="/" class="opacity-50 hover:opacity-100 transition-opacity">Home</a>
       <a href="/about" class="border-b border-white pb-0.5">About</a> 
       <a href="mailto:curiousrobertmail@gmail.com" class="opacity-50 hover:opacity-100 transition-opacity">Contact</a>
     </div>
   </nav>
 
-  <main class="w-full max-w-[1400px] mx-auto pt-48 px-6 md:px-12 pb-24">
+  <main class="w-full max-w-[1400px] mx-auto pt-36 md:pt-48 px-6 md:px-12 pb-24">
     
     <header class="mb-24 md:mb-32 border-b border-black pb-12 reveal-up">
       <h1 class="text-[12vw] md:text-[9vw] leading-[0.8] font-[900] italic uppercase tracking-tighter text-black mb-8">
         Brand stories<br/> in motion
       </h1>
       <div class="max-w-2xl">
-        <p class="text-xl md:text-1xl font-medium leading-tight">
+        <p class="text-lg sm:text-xl md:text-2xl font-medium leading-tight">
           I design identities and experiences through brand, sound, and motion.
         </p>
       </div>
@@ -39,8 +39,8 @@ import Layout from '../layouts/Layout.astro';
       <aside class="md:col-span-4 relative">
         <div class="md:sticky md:top-32 space-y-12 reveal-up">
           
-          <div class="aspect-full bg-transparent overflow-hidden relative grayscale hover:grayscale-0 transition duration-700">
-             <img src="/img/profile_pic.png" class="w-fit h-fit object-cover" alt="Portrait">
+          <div class="w-full bg-transparent overflow-hidden relative grayscale hover:grayscale-0 transition duration-700">
+             <img src="/img/profile_pic.png" class="w-full h-auto object-cover" alt="Portrait">
             <div class="absolute bottom-4 left-4 font-mono text-[10px] uppercase bg-transparent px-2 py-1 border border-black">
                 Robert / 2026
             </div>
@@ -68,10 +68,10 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </aside>
 
-      <article class="md:col-span-8 space-y-24">
+      <article class="md:col-span-8 space-y-16 md:space-y-24">
         
         <div class="reveal-up">
-          <h2 class="font-mono text-[10px] uppercase tracking-widest mb-8 opacity-40">The Approach</h2>
+          <h2 class="font-mono text-[10px] uppercase tracking-widest mb-8 opacity-40">About</h2>
           <div class="space-y-8 text-lg md:text-xl leading-relaxed text-[#111] max-w-3xl">
             <p>
               Hi! My name is Marin Robert, an aspiring Brand & Motion Designer with a toolkit full of creativity, multidisciplinary tools and a passion for crafting unique visual identities.
@@ -86,22 +86,22 @@ import Layout from '../layouts/Layout.astro';
            <h2 class="font-mono text-[10px] uppercase tracking-widest mb-8 opacity-40">Experience</h2>
            
            <div class="border-t border-black">
-             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+             <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
                 <h3 class="text-2xl font-bold tracking-tight">Special Effects Specialization</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">Ongoing</span>
              </div>
              
-             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+             <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
                 <h3 class="text-2xl font-bold tracking-tight">Google UX/UI Certificate</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">Course</span>
              </div>
 
-             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+             <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
                 <h3 class="text-2xl font-bold tracking-tight">Graphic Design Internship</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">3 Months</span>
              </div>
 
-             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+             <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
                 <h3 class="text-2xl font-bold tracking-tight">Freelance</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">2024 — Present</span>
              </div>
@@ -127,7 +127,7 @@ import Layout from '../layouts/Layout.astro';
 
     </section>
 
-    <footer class="mt-48 px-6 md:px-12 py-12 border-t border-black/10 reveal-up">
+    <footer class="mt-24 md:mt-48 px-6 md:px-12 py-12 border-t border-black/10 reveal-up">
         <div class="flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-gray-500">
          <p>© Curious Robert 2026</p>
          <p>Bucharest / Romania</p>
