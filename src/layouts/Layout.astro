@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+		
+		<title>{title}</title>
+	</head>
+	<body class="bg-[#F2F2F2] text-[#0D0D0D] font-sans antialiased selection:bg-black selection:text-[#F2F2F2]">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	/* Custom Font Setup */
+	:root {
+		--font-brand: 'Inter', sans-serif;
+		--font-logic: 'Space Mono', monospace;
+	}
+	
+	body {
+		font-family: var(--font-brand);
+	}
+
+	/* Smooth Reveal for elements */
+	.reveal {
+		animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	@keyframes revealUp {
+		to { opacity: 1; transform: translateY(0); }
+	}
+</style>

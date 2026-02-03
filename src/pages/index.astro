@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="curiousrobert Brand & Motion Design">
+  
+  <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex justify-between items-start mix-blend-difference text-[#F2F2F2]">
+    <div class="flex flex-col">
+      <a href="/" class="text-2xl font-black tracking-widest leading-none hover:opacity-50 transition">
+        curiousrobert<br/>
+      </a>
+      <span class="font-mono text-[10px] mt-2 opacity-60 hidden md:block">
+        2026 // Bucharest
+      </span>
+    </div>
+
+    <div class="flex gap-8 font-mono text-xs font-bold tracking-widest uppercase">
+      <a href="/" class="border-b border-white pb-0.5">Home</a>
+      <a href="/about" class="opacity-50 hover:opacity-100 transition-opacity">About</a>
+      <a href="mailto:curiousrobertmail@gmail.com" class="opacity-50 hover:opacity-100 transition-opacity">Contact</a>
+    </div>
+  </nav>
+
+  <main class="w-full">
+    
+    <header class="min-h-[80vh] flex flex-col justify-end px-6 md:px-12 pb-24 pt-48">
+      <div class="max-w-[1800px] w-full mx-auto">
+        
+        <h1 class="text-[13vw] leading-[0.8] font-black tracking-tighter uppercase mb-12 reveal-on-scroll">
+          Brands <span class="font-mono text-[4vw] font-normal tracking-tight align-middle text-gray-400 italic">+</span><br/>
+          Motion
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 border-t border-black pt-8 reveal-on-scroll delay-200">
+          <div class="md:col-span-4 font-mono text-xs leading-relaxed uppercase tracking-wide text-gray-500">
+            <p>Multidisciplinary Toolkit</p>
+            <p class="mt-2 text-black">Cavalry / After Effects / Jitter / Blender / Affinity / Illustrator / DaVinci Resolve</p>
+          </div>
+          
+          <div class="md:col-span-6 md:col-start-7">
+            <p class="text-xl md:text-3xl font-medium leading-tight text-[#0D0D0D]">
+              A curation of digital products, visual identities & motion practices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="px-6 md:px-12 pb-48 max-w-[1800px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 md:gap-y-48">
+        
+        <div class="reveal-on-scroll">
+          <ProjectCard 
+            title="Drip Soda" 
+            category="Brand & Motion Design"
+            year="2026"
+            videoSrc="/videos/drip-video-5.mp4" 
+            href="/projects/drip"
+          />
+        </div>
+
+        <div class="md:mt-32 reveal-on-scroll delay-200">
+          <ProjectCard 
+            title="Promptlab.io" 
+            category="Web, Brand & Motion Design"
+            year="2025"
+            videoSrc="/videos/promptlab-video-2.mp4" 
+            href="/projects/promptlab"
+          />
+        </div>
+
+        <div class="reveal-on-scroll">
+          <ProjectCard 
+            title="Semn" 
+            category="Experimental typographic exploration"
+            year="2025"
+            videoSrc="/videos/semn-video-1.mp4" 
+            href="/projects/semn"
+          />
+        </div>
+
+        <div class="md:mt-32 reveal-on-scroll delay-200">
+          <ProjectCard 
+            title="Button States" 
+            category="Web & Motion Design"
+            year="2024"
+            videoSrc="/videos/nike.mp4" 
+            href="/projects/nike"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="px-6 md:px-12 py-12 border-t border-black/10 reveal-on-scroll">
+       <div class="flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-gray-500">
+        <p>© Curious Robert 2026</p>
+        <p>Bucharest / Romania</p>
+        <a href="#" class="hover:text-black transition">Back to Top ↑</a>
+      </div>
+    </footer>
+
+  </main>
+</Layout>
+
+<style>
+  /* 1. The Initial State (Hidden & Moved Down) */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* 2. The Active State (Visible & In Place) */
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 3. Stagger Delays (optional helpers) */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+</style>
+
+<script>
+  // This script runs in the browser and watches for elements
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1 // Triggers when 10% of the item is visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        // Optional: Stop watching once it reveals (better performance)
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, observerOptions);
+
+  // Grab all elements with the reveal class and start watching them
+  document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+    observer.observe(element);
+  });
+</script>

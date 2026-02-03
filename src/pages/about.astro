@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="about.curiousrobert">
+  
+  <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex justify-between items-start mix-blend-difference text-[#F2F2F2]">
+    <div class="flex flex-col">
+      <a href="/" class="text-2xl font-black tracking-widest leading-none hover:opacity-50 transition">
+        curiousrobert<br/>
+      </a>
+      <span class="font-mono text-[10px] mt-2 opacity-60 hidden md:block">
+        2026 // Bucharest
+      </span>
+    </div>
+
+    <div class="flex gap-8 font-mono text-xs font-bold tracking-widest uppercase">
+      <a href="/" class="opacity-50 hover:opacity-100 transition-opacity">Home</a>
+      <a href="/about" class="border-b border-white pb-0.5">About</a> 
+      <a href="mailto:curiousrobertmail@gmail.com" class="opacity-50 hover:opacity-100 transition-opacity">Contact</a>
+    </div>
+  </nav>
+
+  <main class="w-full max-w-[1400px] mx-auto pt-48 px-6 md:px-12 pb-24">
+    
+    <header class="mb-24 md:mb-32 border-b border-black pb-12 reveal-up">
+      <h1 class="text-[12vw] md:text-[9vw] leading-[0.8] font-[900] italic uppercase tracking-tighter text-black mb-8">
+        Brand stories<br/> in motion
+      </h1>
+      <div class="max-w-2xl">
+        <p class="text-xl md:text-1xl font-medium leading-tight">
+          I design identities and experiences through brand, sound, and motion.
+        </p>
+      </div>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
+      
+      <aside class="md:col-span-4 relative">
+        <div class="md:sticky md:top-32 space-y-12 reveal-up">
+          
+          <div class="aspect-full bg-transparent overflow-hidden relative grayscale hover:grayscale-0 transition duration-700">
+             <img src="/img/profile_pic.png" class="w-fit h-fit object-cover" alt="Portrait">
+            <div class="absolute bottom-4 left-4 font-mono text-[10px] uppercase bg-transparent px-2 py-1 border border-black">
+                Robert / 2026
+            </div>
+          </div>
+
+          <div class="border-t border-black pt-6">
+            <h3 class="font-mono text-[10px] uppercase tracking-widest mb-4 opacity-40">Services / Capabilities</h3>
+            <ul class="font-mono text-xs uppercase space-y-2 tracking-wider leading-relaxed">
+              <li class="flex justify-between"><span>Art Direction</span> <span>01</span></li>
+              <li class="flex justify-between"><span>Motion Design</span> <span>02</span></li>
+              <li class="flex justify-between"><span>Brand Identity</span> <span>03</span></li>
+              <li class="flex justify-between"><span>Web Development</span> <span>04</span></li>
+              <li class="flex justify-between"><span>Sound Design</span> <span>05</span></li>
+            </ul>
+          </div>
+
+           <div class="border-t border-black pt-6">
+            <h3 class="font-mono text-[10px] uppercase tracking-widest mb-4 opacity-40">Availability</h3>
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="font-mono text-xs uppercase font-bold">Open for Commissions</span>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <article class="md:col-span-8 space-y-24">
+        
+        <div class="reveal-up">
+          <h2 class="font-mono text-[10px] uppercase tracking-widest mb-8 opacity-40">The Approach</h2>
+          <div class="space-y-8 text-lg md:text-xl leading-relaxed text-[#111] max-w-3xl">
+            <p>
+              Hi! My name is Marin Robert, an aspiring Brand & Motion Designer with a toolkit full of creativity, multidisciplinary tools and a passion for crafting unique visual identities.
+            </p>
+            <p>
+             I aspire in helping little and big brands alike to communicate their values and stories through compelling design solutions that leave a lasting impact.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-up">
+           <h2 class="font-mono text-[10px] uppercase tracking-widest mb-8 opacity-40">Experience</h2>
+           
+           <div class="border-t border-black">
+             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+                <h3 class="text-2xl font-bold tracking-tight">Special Effects Specialization</h3>
+                <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">Ongoing</span>
+             </div>
+             
+             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+                <h3 class="text-2xl font-bold tracking-tight">Google UX/UI Certificate</h3>
+                <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">Course</span>
+             </div>
+
+             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+                <h3 class="text-2xl font-bold tracking-tight">Graphic Design Internship</h3>
+                <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">3 Months</span>
+             </div>
+
+             <div class="py-6 border-b border-black flex justify-between items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
+                <h3 class="text-2xl font-bold tracking-tight">Freelance</h3>
+                <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">2024 — Present</span>
+             </div>
+           </div>
+        </div>
+
+        <div class="reveal-up">
+            <h2 class="font-mono text-[10px] uppercase tracking-widest mb-8 opacity-40">Technical Toolkit</h2>
+            <div class="flex flex-wrap gap-4">
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">After Effects</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">Cavalry</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">Blender 3D</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">Figma</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">DaVinci Resolve</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">Affinity</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">Illustrator</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">Photoshop</span>
+                <span class="px-4 py-2 border border-black rounded-full font-mono text-xs uppercase hover:bg-black hover:text-white transition">Jitter</span>
+            </div>
+        </div>
+
+      </article>
+
+    </section>
+
+    <footer class="mt-48 px-6 md:px-12 py-12 border-t border-black/10 reveal-up">
+        <div class="flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-gray-500">
+         <p>© Curious Robert 2026</p>
+         <p>Bucharest / Romania</p>
+         <div class="flex gap-6 mt-4 md:mt-0">
+             <a href="#" class="hover:text-black transition">Behance</a>
+             <a href="#" class="hover:text-black transition">Dribble</a>
+             <a href="#" class="hover:text-black transition">Instagram</a>
+         </div>
+       </div>
+    </footer>
+
+  </main>
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+</script>
