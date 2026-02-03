@@ -3,10 +3,11 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  // React is an integration
+  // Update this to your new professional domain
+  site: 'https://curiousrobert.cc',
+  base: '/',
   integrations: [react()],
   vite: {
-    // Tailwind v4 is a Vite plugin
     plugins: [tailwindcss()],
   },
 });
