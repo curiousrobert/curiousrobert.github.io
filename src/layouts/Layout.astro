@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;1,400&family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 		
 		<title>{title}</title>
 	</head>
@@ -35,6 +35,12 @@ const { title } = Astro.props;
 	
 	body {
 		font-family: var(--font-brand);
+		font-weight: 400;
+	}
+
+	.font-mono {
+		font-family: var(--font-logic);
+		font-weight: 700;
 	}
 
 	/* Smooth Reveal for elements */

@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import profilePic from '../assets/profile_pic.png';
 ---
 
 <Layout title="about.curiousrobert">
   
-  <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-start mix-blend-difference text-[#F2F2F2]">
+  <nav class="w-full px-6 py-6 md:px-12 md:py-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-start mix-blend-difference text-[#F2F2F2]">
     <div class="flex flex-col">
-      <a href="/" class="text-2xl font-black tracking-widest leading-none hover:opacity-50 transition">
+      <a href="/" class="text-2xl font-normal tracking-widest leading-none hover:opacity-50 transition">
         curiousrobert<br/>
       </a>
       <span class="font-mono text-[10px] mt-2 opacity-60 hidden md:block">
@@ -21,14 +23,14 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </nav>
 
-  <main class="w-full max-w-[1400px] mx-auto pt-36 md:pt-48 px-6 md:px-12 pb-24">
+  <main class="w-full max-w-[1400px] mx-auto pt-12 md:pt-16 px-6 md:px-12 pb-24">
     
     <header class="mb-24 md:mb-32 border-b border-black pb-12 reveal-up">
-      <h1 class="text-[12vw] md:text-[9vw] leading-[0.8] font-[900] italic uppercase tracking-tighter text-black mb-8">
+      <h1 class="text-[12vw] md:text-[9vw] leading-[0.8] font-normal italic uppercase tracking-tighter text-black mb-8">
         Brand stories<br/> in motion
       </h1>
       <div class="max-w-2xl">
-        <p class="text-lg sm:text-xl md:text-2xl font-medium leading-tight">
+        <p class="text-lg sm:text-xl md:text-2xl font-normal leading-tight">
           I design identities and experiences through brand, sound, and motion.
         </p>
       </div>
@@ -40,7 +42,17 @@ import Layout from '../layouts/Layout.astro';
         <div class="md:sticky md:top-32 space-y-12 reveal-up">
           
           <div class="w-full bg-transparent overflow-hidden relative grayscale hover:grayscale-0 transition duration-700">
-             <img src="/img/profile_pic.png" class="w-full h-auto object-cover" alt="Portrait">
+             <Image
+               src={profilePic}
+               alt="Portrait"
+               width={1200}
+               height={1202}
+               widths={[320, 480, 640, 800, 1200]}
+               sizes="(min-width: 768px) 33vw, 90vw"
+               loading="lazy"
+               decoding="async"
+               class="w-full h-auto object-cover"
+             />
             <div class="absolute bottom-4 left-4 font-mono text-[10px] uppercase bg-transparent px-2 py-1 border border-black">
                 Robert / 2026
             </div>
@@ -87,22 +99,22 @@ import Layout from '../layouts/Layout.astro';
            
            <div class="border-t border-black">
              <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
-                <h3 class="text-2xl font-bold tracking-tight">Special Effects Specialization</h3>
+                <h3 class="text-2xl font-normal tracking-tight">Special Effects Specialization</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">Ongoing</span>
              </div>
              
              <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
-                <h3 class="text-2xl font-bold tracking-tight">Google UX/UI Certificate</h3>
+                <h3 class="text-2xl font-normal tracking-tight">Google UX/UI Certificate</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">Course</span>
              </div>
 
              <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
-                <h3 class="text-2xl font-bold tracking-tight">Graphic Design Internship</h3>
+                <h3 class="text-2xl font-normal tracking-tight">Graphic Design Internship</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">3 Months</span>
              </div>
 
              <div class="py-6 border-b border-black flex flex-col gap-2 md:flex-row md:justify-between md:items-baseline hover:bg-black hover:text-white hover:px-4 transition-all duration-300 cursor-default group">
-                <h3 class="text-2xl font-bold tracking-tight">Freelance</h3>
+                <h3 class="text-2xl font-normal tracking-tight">Freelance</h3>
                 <span class="font-mono text-[10px] uppercase opacity-50 group-hover:opacity-100">2024 — Present</span>
              </div>
            </div>

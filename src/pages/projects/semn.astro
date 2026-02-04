@@ -5,9 +5,9 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="Project Detail — curiousrobert">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
  
-  <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-start mix-blend-difference text-[#F2F2F2]">
+  <nav class="w-full px-6 py-6 md:px-12 md:py-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-start mix-blend-difference text-[#F2F2F2]">
     <div class="flex flex-col">
-      <a href="/" class="text-2xl font-black tracking-widest leading-none hover:opacity-50 transition">
+      <a href="/" class="text-2xl font-normal tracking-widest leading-none hover:opacity-50 transition">
         curiousrobert<br/>
       </a>
       <span class="font-mono text-[10px] mt-2 opacity-60 hidden md:block">
@@ -22,9 +22,9 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </nav>
 
-  <main class="w-full pt-36 md:pt-48 pb-12">
+  <main class="w-full pt-12 md:pt-16 pb-12">
     <header class="px-6 md:px-12 max-w-[1800px] mx-auto mb-20">
-        <h1 class="text-[12vw] md:text-[8vw] leading-[0.8] font-[900] italic uppercase tracking-tighter text-black reveal-up">
+        <h1 class="text-[12vw] md:text-[8vw] leading-[0.8] font-normal italic uppercase tracking-tighter text-black reveal-up">
             semn
         </h1>
         <div class="mt-8 border-t border-black pt-4 flex flex-col gap-2 md:flex-row md:justify-between md:items-center font-mono text-[10px] uppercase tracking-widest opacity-60 reveal-up">
@@ -41,7 +41,7 @@ import Layout from '../../layouts/Layout.astro';
             
             <div class="reveal-up">
               <h3 class="font-mono text-[10px] uppercase tracking-widest mb-4 opacity-40">Project Overview</h3>
-              <p class="text-xl md:text-2xl font-medium leading-tight">
+              <p class="text-xl md:text-2xl font-normal leading-tight">
                 I really wanted to create a personal project that combined my passion for branding, motion design, and my 3D skills.
               </p>
             </div>
@@ -67,7 +67,7 @@ import Layout from '../../layouts/Layout.astro';
         <div class="lg:col-span-8 space-y-12 md:space-y-32">
           
           <div class="reveal-up group overflow-hidden border border-black bg-white">
-            <video autoplay muted loop playsinline class="w-full h-auto scale-[1.01]">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover scale-[1.01]">
               <source src="/videos/semn-video-1.mp4" type="video/mp4">
             </video>
           </div>
@@ -96,20 +96,20 @@ import Layout from '../../layouts/Layout.astro';
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="reveal-up group overflow-hidden border border-black bg-white">
-            <video autoplay muted loop playsinline class="w-full h-auto">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
               <source src="/videos/semn-video-2.mp4" type="video/mp4">
             </video>
             </div>
             
             <div class="reveal-up group overflow-hidden border border-black bg-white">
-            <video autoplay muted loop playsinline class="w-full h-auto">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
               <source src="/videos/semn-video-3.mp4" type="video/mp4">
             </video>
             </div>
           </div>
 
           <div class="reveal-up group overflow-hidden border border-black bg-white">
-            <video autoplay muted loop playsinline class="w-full h-auto">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
               <source src="/videos/semn-video-4.mp4" type="video/mp4">
             </video>
           </div>
