@@ -4,123 +4,197 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout title="Project Detail — curiousrobert">
   
-  <nav class="w-full px-6 py-6 md:px-12 md:py-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-start mix-blend-difference text-[#F2F2F2]">
+  <nav class="w-full px-10 py-6 flex justify-between items-center bg-[#fcfcff]/80 backdrop-blur-md sticky top-0 z-50 border-b border-[#E2E2E2]">
     <div class="flex flex-col">
-      <a href="/" class="text-2xl font-normal tracking-widest leading-none hover:opacity-50 transition">
-        curiousrobert<br/>
+      <a href="/" class="text-[0.7rem] font-bold font-mono tracking-[0.04em] uppercase text-[#080808] no-underline transition-opacity hover:opacity-70">
+        curiousrobert
       </a>
-      <span class="font-mono text-[10px] mt-2 opacity-60 hidden md:block">
-        2026 // Bucharest
-      </span>
     </div>
 
-    <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase pointer-events-auto">
-      <a href="/" class="opacity-50 hover:opacity-100 transition-opacity">Home</a>
-      <a href="/about" class="opacity-50 hover:opacity-100 transition-opacity">About</a>
-      <a href="mailto:curiousrobertmail@gmail.com" class="opacity-50 hover:opacity-100 transition-opacity">Contact</a>
+    <div class="flex gap-10 font-mono text-[0.65rem] font-medium tracking-[0.06em] uppercase">
+      <a href="/" class="text-[#6E6E6E] hover:text-[#080808] transition-colors no-underline">Home</a>
+      <a href="/about" class="text-[#6E6E6E] hover:text-[#080808] transition-colors no-underline">About</a>
+      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#6E6E6E] hover:text-[#080808] transition-colors no-underline">Contact</a>
     </div>
   </nav>
 
-  <main class="w-full pt-12 md:pt-16 pb-12">
-    <header class="px-6 md:px-12 max-w-[1800px] mx-auto mb-20">
-        <h1 class="text-[12vw] md:text-[8vw] leading-[0.8] font-normal italic uppercase tracking-tighter text-black reveal-up">
-            drip soda
+  <main class="w-full pt-16 pb-0 bg-[#fcfcff]">
+    
+    <header class="px-10 max-w-[1800px] mx-auto mb-16">
+        <h1 class="font-mono font-bold text-[9vw] md:text-[6.8vw] leading-none tracking-tighter uppercase text-[#080808] reveal-up">
+          drip soda
         </h1>
-        <div class="mt-8 border-t border-black pt-4 flex flex-col gap-2 md:flex-row md:justify-between md:items-center font-mono text-[10px] uppercase tracking-widest opacity-60 reveal-up">
-            <span>Project 01</span>
-            <span>Brand & Motion Design 2026</span>
+        <div class="mt-8 border-t border-[#E2E2E2] pt-5 flex flex-col gap-2 md:flex-row md:justify-between md:items-center font-mono text-[0.65rem] uppercase tracking-widest text-[#6E6E6E] reveal-up">
+            <span>Project 02</span>
+            <span>Brand &amp; Motion Design 2026</span>
         </div>
     </header>
 
-    <section class="px-6 md:px-12 max-w-[1800px] mx-auto">
+    <section class="px-10 max-w-[1800px] mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         
         <div class="lg:col-span-4">
-          <div class="lg:sticky lg:top-32 space-y-12">
+          <div class="lg:sticky lg:top-32 space-y-12 pb-12">
             
             <div class="reveal-up">
-              <h3 class="font-mono text-[10px] uppercase tracking-widest mb-4 opacity-40">Project Overview</h3>
-              <p class="text-xl md:text-2xl font-normal leading-tight">
-                An exploration into motion and audio design through a personal project centered around a fictional beverage brand called "drip."
+              <h3 class="font-mono text-[0.6rem] uppercase tracking-widest mb-4 text-[#6E6E6E] opacity-60">Project Overview</h3>
+              <p class="font-mono text-sm md:text-base text-[#080808] leading-relaxed">
+                Motion and audio design through a personal project centered around a fictional beverage brand called "drip"
               </p>
             </div>
 
             <div class="reveal-up space-y-6">
-              <p class="text-gray-600 leading-relaxed">
-               The <strong>goal </strong>was to showcase my skills in motion and audio design through a personal project.I created a brand identity for "drip," a fictional beverage company, and developed a series of animated advertisements to highlight the product.
+              <p class="font-mono text-[11px] text-[#6E6E6E] leading-relaxed">
+                <strong class="text-[#080808] uppercase font-bold tracking-wider block mb-1">Idea:</strong> 
+                Create a bold motion system for a beverage ad and make use of sound design to make it "pop".
+              </p>
+
+              <p class="font-mono text-[11px] text-[#6E6E6E] leading-relaxed">
+                <strong class="text-[#080808] uppercase font-bold tracking-wider block mb-1">Translation:</strong> 
+                Motion timing follows mechanical easing and properties of carbonation, reinforcing the sensory qualities of the beverage.
               </p>
               
-              <div class="pt-6 border-t border-black/10">
-                <h4 class="font-mono text-[10px] uppercase tracking-widest mb-3 opacity-40">Tool Stack</h4>
-                <ul class="font-mono text-xs uppercase space-y-1 tracking-wider">
+              <p class="font-mono text-[11px] text-[#6E6E6E] leading-relaxed">
+                <strong class="text-[#080808] uppercase font-bold tracking-wider block mb-1">Direction and constraints:</strong> 
+                Establish typography as a reactive liquid system, where motion follows compression, inertia, and elastic release, ensuring behavior reflects viscosity rather than mechanical animation.
+              </p>
+              
+              <div class="pt-6 border-t border-[#E2E2E2]">
+                <h4 class="font-mono text-[0.6rem] uppercase tracking-widest mb-3 text-[#6E6E6E] opacity-60">Tool Stack</h4>
+                <ul class="font-mono text-[11px] uppercase space-y-1.5 tracking-wider text-[#080808]">
                   <li>Figma / Illustrator</li>
-                  <li>After Effects / DaVinci Resolve</li>
+                  <li>After Effects</li>
                   <li>Cavalry / Ableton</li>
                 </ul>
+              </div>
+            </div>
+
+            <div class="pt-6 border-t border-[#E2E2E2]">
+              <h4 class="font-mono text-[0.6rem] uppercase tracking-widest mb-6 text-[#6E6E6E] opacity-60">
+                Design System Assets
+              </h4>
+
+              <div class="mb-8">
+                <h5 class="font-mono text-[0.55rem] uppercase tracking-widest mb-3 text-[#6E6E6E] opacity-50">
+                  Typography
+                </h5>
+
+                <ul class="space-y-4">
+                  <li>
+                    <div class="font-mono text-sm font-bold text-[#080808]">Space Mono</div>
+                    <div class="font-mono text-[9px] uppercase tracking-wider text-[#6E6E6E] mt-1">
+                      Primary — Headlines &amp; Motion System
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h5 class="font-mono text-[0.55rem] uppercase tracking-widest mb-3 text-[#6E6E6E] opacity-50">
+                  Color Token Map
+                </h5>
+
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between py-1">
+                    <div class="flex items-center gap-3">
+                      <div class="w-6 h-6 bg-[#F8A003] border border-[#E2E2E2]"></div>
+                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Orange</span>
+                    </div>
+                    <span class="font-mono text-[10px] text-[#6E6E6E]">#F8A003</span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-1">
+                    <div class="flex items-center gap-3">
+                      <div class="w-6 h-6 bg-[#739700] border border-[#E2E2E2]"></div>
+                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Green</span>
+                    </div>
+                    <span class="font-mono text-[10px] text-[#6E6E6E]">#739700</span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-1">
+                    <div class="flex items-center gap-3">
+                      <div class="w-6 h-6 bg-[#120F03] border border-[#E2E2E2]"></div>
+                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Black</span>
+                    </div>
+                    <span class="font-mono text-[10px] text-[#6E6E6E]">#120F03</span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-1">
+                    <div class="flex items-center gap-3">
+                      <div class="w-6 h-6 bg-[#E8EBDC] border border-[#E2E2E2]"></div>
+                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Off White</span>
+                    </div>
+                    <span class="font-mono text-[10px] text-[#6E6E6E]">#E8EBDC</span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-1">
+                    <div class="flex items-center gap-3">
+                      <div class="w-6 h-6 bg-[#FDB918] border border-[#E2E2E2]"></div>
+                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Yellow</span>
+                    </div>
+                    <span class="font-mono text-[10px] text-[#6E6E6E]">#FDB918</span>
+                  </div>
+                </div>
               </div>
             </div>
 
           </div>
         </div>
 
-        <div class="lg:col-span-8 space-y-12 md:space-y-32">
+        <div class="lg:col-span-8 space-y-12 md:space-y-24 pb-24">
           
-          <div class="reveal-up group overflow-hidden border border-black bg-white">
+          <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
             <video autoplay muted loop playsinline class="w-full h-full object-cover scale-[1.01]">
               <source src="/videos/drip-video-5.mp4" type="video/mp4">
             </video>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="reveal-up group overflow-hidden border border-black bg-white">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
-              <source src="/videos/drip-video-1.mp4" type="video/mp4">
-            </video>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
+              <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="/videos/drip-video-1.mp4" type="video/mp4">
+              </video>
             </div>
            
-            <div class="reveal-up group overflow-hidden border border-black bg-white">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
-              <source src="/videos/drip-video-2.mp4" type="video/mp4">
-            </video>
+            <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
+              <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="/videos/drip-video-2.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
 
-          <div class="reveal-up group overflow-hidden border border-black bg-white">
+          <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
             <video autoplay muted loop playsinline class="w-full h-full object-cover">
               <source src="/videos/drip-video-3.mov" type="video/mp4">
             </video>
           </div>
 
-          <div class="reveal-up group overflow-hidden border border-black bg-white">
+          <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
             <video autoplay muted loop playsinline class="w-full h-full object-cover">
               <source src="/videos/drip-video-4.mp4" type="video/mp4">
             </video>
-          </div>
-
-          <div class="reveal-up group overflow-hidden border border-black bg-white">
-            <img src="/src/assets/drip-side.png" alt="Drip Soda Side View" class="w-full h-auto object-cover">
           </div>
 
         </div>
       </div>
     </section>
 
-    <footer class="mt-24 md:mt-48 px-6 md:px-12 py-12 border-t border-black/10 reveal-up">
-        <div class="flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-gray-500">
-         <p>© Curious Robert 2026</p>
-         <p>Bucharest / Romania</p>
-         <a href="/projects/promptlab" class="hover:text-black transition">Next Project</a>
+    <footer class="w-full bg-[#080808] px-10 py-16 reveal-up">
+        <div class="max-w-[1800px] mx-auto flex flex-col gap-6 md:flex-row justify-between items-start md:items-center font-mono text-[0.65rem] uppercase tracking-[0.06em] text-white/50">
+          <p class="m-0">© Curious Robert 2026</p>
+          <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Romania</p>
+          <a href="/projects/promptlab" class="text-white/50 hover:text-white transition-colors no-underline font-bold">Next Project →</a>
        </div>
-     </footer>
+    </footer>
   </main>
 </Layout>
 
 <style>
-  /* These classes hook into the script below */
+  /* System Interlocking Reveal Architecture */
   .reveal-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(20px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .reveal-up.is-visible {
     opacity: 1;
@@ -135,7 +209,7 @@ import Layout from '../../layouts/Layout.astro';
         entry.target.classList.add('is-visible');
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05 });
 
   document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
 </script>
