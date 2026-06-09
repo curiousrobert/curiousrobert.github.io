@@ -1,458 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>curiousrobert | Brand Systems &amp; Motion</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="curiousrobert — Systems in Motion">
+  
+  <nav class="w-full px-6 md:px-10 py-6 flex justify-between items-center bg-[#fcfcff]/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="flex flex-col">
+      <a href="/" class="text-[0.7rem] font-bold font-mono tracking-wider uppercase text-[#080808] no-underline transition-opacity hover:opacity-50">
+        curiousrobert
+      </a>
+    </div>
+
+    <div class="flex gap-8 md:gap-12 font-mono text-[0.65rem] font-medium tracking-widest uppercase">
+      <a href="/" class="text-[#080808] border-b border-[#080808] pb-0.5 no-underline">Home</a>
+      <a href="/about" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">About</a>
+      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Contact</a>
+    </div>
+  </nav>
+
+  <main class="w-full pb-0 bg-[#fcfcff]">
+    
+    <header class="px-6 md:px-10 max-w-[1800px] mx-auto pt-16 md:pt-28 mb-24 md:mb-44 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+      <div class="lg:col-span-8">
+        <h1 class="font-sans font-bold text-[15vw] md:text-[9.5vw] leading-[0.8] tracking-tighter uppercase text-[#080808] reveal-up m-0 origin-left">
+          Systems<br/><span class="text-[#0038FF]">in motion</span>
+        </h1>
+      </div>
+      <div class="lg:col-span-4 flex flex-col items-start lg:items-end font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] text-[#6E6E6E] reveal-up space-y-4 lg:text-right">
+        <p class="leading-relaxed">
+          Brand & Motion Designer<br/>Bucharest // Working Globally<br/>2024 — 2026
+        </p>
+        <span class="text-[#080808] font-bold tracking-widest block pt-4">Selected Case Studies [04]</span>
+      </div>
+    </header>
+
+    <section class="px-6 md:px-10 max-w-[1800px] mx-auto pb-40">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-24 md:gap-y-44">
+        
+        <div class="md:col-span-7 reveal-up">
+          <a href="/projects/visitbucharest" class="group block no-underline opacity-50 hover:opacity-100 transition-all duration-700 ease-out">
+            <div class="video-container w-full aspect-[4/3] overflow-hidden bg-[#fcfcff] mb-6 relative grayscale">
+              <video 
+                src="/videos/visit-bucharest.mp4" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover"
+              ></video>
+              <div class="absolute top-4 right-4 font-mono text-[9px] tracking-widest uppercase bg-[#080808] text-white px-2 py-1">
+                Soon
+              </div>
+            </div>
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1">
+                  Visit Bucharest
+                </h2>
+                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
+                  Typographic Identity & Motion
+                </p>
+              </div>
+              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
+                <span class="block font-bold text-[#080808]">01</span>
+                <span class="block text-[10px] opacity-60">2026</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="md:col-span-5 md:mt-32 reveal-up">
+          <a href="/projects/drip" class="group block no-underline">
+            <div class="video-container w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-[#fcfcff] mb-6">
+              <video 
+                src="/videos/drip-video-5.mp4" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover"
+              ></video>
+            </div>
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1 group-hover:text-[#0038FF] transition-colors">
+                  Drip Soda
+                </h2>
+                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
+                  Brand Identity & Motion
+                </p>
+              </div>
+              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
+                <span class="block font-bold text-[#080808]">02</span>
+                <span class="block text-[10px] opacity-60">2026</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="md:col-span-5 reveal-up">
+          <a href="/projects/semn" class="group block no-underline">
+            <div class="video-container w-full aspect-[3/4] overflow-hidden bg-[#fcfcff] mb-6">
+              <video 
+                src="/videos/semn-video-1.mp4" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover"
+              ></video>
+            </div>
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1 group-hover:text-[#0038FF] transition-colors">
+                  Semn
+                </h2>
+                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
+                  Typographic Motion Study
+                </p>
+              </div>
+              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
+                <span class="block font-bold text-[#080808]">03</span>
+                <span class="block text-[10px] opacity-60">2025</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="md:col-span-7 md:-mt-16 reveal-up">
+          <a href="/projects/promptlab" class="group block no-underline">
+            <div class="video-container w-full aspect-[16/10] md:aspect-[4/3] overflow-hidden bg-[#fcfcff] mb-6">
+              <video 
+                src="/videos/promptlab-video-2.mp4" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover"
+              ></video>
+            </div>
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1 group-hover:text-[#0038FF] transition-colors">
+                  Promptlab.io
+                </h2>
+                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
+                  Identity, Motion & Digital Product
+                </p>
+              </div>
+              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
+                <span class="block font-bold text-[#080808]">04</span>
+                <span class="block text-[10px] opacity-60">2025</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="w-full bg-[#080808] px-6 md:px-10 py-16 reveal-up">
+      <div class="max-w-[1800px] mx-auto flex flex-col gap-8 md:flex-row justify-between items-start md:items-center font-mono text-[10px] md:text-xs uppercase tracking-widest text-[#888888]">
+        <p class="m-0">© Curious Robert 2026</p>
+        <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Global</p>
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'});" class="bg-transparent border-none text-[#fcfcff] hover:opacity-70 transition-opacity cursor-pointer font-mono p-0 text-[10px] md:text-xs uppercase tracking-widest">
+          Back to top <span class="ml-1">↑</span>
+        </button>
+      </div>
+    </footer>
+
+  </main>
+</Layout>
+
 <style>
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --studio-bg: #fcfcff;       /* Pure gallery white canvas */
-  --studio-ink: #080808;      /* Deep obsidian type */
-  --studio-muted: #6E6E6E;    /* Technical data / secondary text */
-  --studio-line: #E2E2E2;     /* Architectural hairline grid lines */
-  --studio-accent: #0038FF;   /* International Klein Blue */
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html, body {
-  font-family: 'Space Mono', monospace;
-  background: var(--studio-bg);
-  color: var(--studio-ink);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ── NAV (Sticky Glassmorphism) ───────────────────── */
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(252, 252, 255, 0.80);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--studio-line);
-  transition: all 0.3s ease;
-}
-
-.nav-name {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--studio-ink);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2.5rem;
-}
-
-.nav-links a {
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--studio-muted);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover { color: var(--studio-ink); }
-
-/* ── HEADER (Balanced Spacing & Clean Vibe) ───────── */
-
-.header {
-  padding: 4.5rem 2.5rem 4rem; 
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;        
-  gap: 2rem;
-}
-
-.header-title {
-  font-size: clamp(2.8rem, 7.2vw, 6.2rem); 
-  font-weight: 700;
-  letter-spacing: -0.04em;   /* Compressed structural monospace look */
-  line-height: 0.95;          
-  color: var(--studio-ink);
-  text-transform: uppercase;
-}
-
-.header-title span {
-  color: var(--studio-accent); 
-  display: block;
-}
-
-.header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2rem;
-  padding-bottom: 0.5rem;
-}
-
-.header-sub {
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--studio-muted);
-  text-align: right;
-  line-height: 1.8;
-}
-
-.header-count {
-  font-size: 0.95rem; 
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: var(--studio-ink);
-  line-height: 1;
-}
-
-/* ── THE STUDIO GRID (Architectural Hairlines) ────── */
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--studio-line); 
-  gap: 1px; 
-  border-top: 1px solid var(--studio-line);
-  border-bottom: 1px solid var(--studio-line);
-}
-
-/* ── PROJECT COMPONENTS ───────────────────────────── */
-
-.project {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  background: #fcfcff;
-}
-
-.project video,
-.project img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transform: scale(1.01);
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project:hover video,
-.project:hover img {
-  transform: scale(1.05);
-}
-
-.project--soon video {
-  filter: grayscale(100%) brightness(0.4);
-}
-
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, rgba(8,8,8,0) 60%);
-  opacity: 0.6;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.project:hover .project-overlay {
-  opacity: 0.85;
-}
-
-/* Bottom Information Label */
-.project-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1rem;
-  z-index: 5;
-  transform: translateY(0);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project:hover .project-label {
-  transform: translateY(-5px);
-}
-
-.project-name {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #fcfcff;
-  line-height: 1.0;
-  text-transform: uppercase;
-}
-
-.project-right {
-  text-align: right;
-  flex-shrink: 0;
-  max-width: 48%;
-}
-
-.project-cat {
-  display: block;
-  font-size: 0.6rem; 
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.6;
-}
-
-.project-year {
-  display: block;
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.35);
-  margin-top: 0.2rem;
-}
-
-/* Technical Electric Blue Subtitle Badge */
-.project-num {
-  position: absolute;
-  top: 1.75rem;
-  left: 2.5rem;
-  z-index: 10;
-  
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--studio-accent);
-  
-  background-color: var(--studio-ink);
-  padding: 0.4rem 0.8rem;
-  border-radius: 0px; 
-  text-transform: uppercase;
-  
-  border-left: 3px solid var(--studio-accent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Soon Badge */
-.project-soon {
-  position: absolute;
-  top: 1.75rem;
-  right: 2.5rem;
-  z-index: 10;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  background: rgba(8, 8, 8, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.4rem 0.8rem;
-  border-radius: 0px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* ── FOOTER ──────────────────────────────────────── */
-
-footer {
-  padding: 4rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--studio-ink);
-  color: #FFFFFF;
-}
-
-footer p, footer a {
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover { color: #FFFFFF; }
-
-/* ── RESPONSIVE STUDIO SYSTEM ─────────────────────── */
-
-@media (max-width: 900px) {
-  .header {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 4rem 2rem 3rem;
-  }
-  .header-right {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  .header-sub { text-align: left; }
-  .header-count { text-align: right; }
-  nav { padding: 1.25rem 2rem; }
-  .project-label { padding: 1.75rem 2rem; }
-  .project-num { top: 1.5rem; left: 2rem; }
-  .project-soon { top: 1.5rem; right: 2rem; }
-}
-
-@media (max-width: 600px) {
-  nav { padding: 1rem 1.25rem; }
-  nav .nav-links { gap: 1.5rem; }
-
-  .header {
-    padding: 3.5rem 1.25rem 2.5rem;
-  }
-
-  .header-title {
-    font-size: clamp(2.0rem, 11vw, 3.8rem);
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project {
-    aspect-ratio: 4/5; 
-  }
-
-  .project:hover video,
-  .project:hover img {
-    transform: scale(1.02);
-  }
-
-  .project-label {
-    padding: 1.5rem 1.25rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
+  /* Premium Studio Animation Curves */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: transform, opacity; 
+    transition: opacity 1.4s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 1.4s cubic-bezier(0.215, 0.610, 0.355, 1);
   }
   
-  .project:hover .project-label {
+  .reveal-up.is-visible {
+    opacity: 1;
     transform: translateY(0);
   }
 
-  .project-right { 
-    max-width: 100%; 
-    text-align: left;
+  /* Structural lock on video parent wrapper */
+  .video-container {
+    isolation: isolate;
+    contain: paint;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
-  .project-num { top: 1.25rem; left: 1.25rem; font-size: 0.85rem; }
-  .project-soon { top: 1.25rem; right: 1.25rem; }
-
-  footer {
-    padding: 3rem 1.25rem;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
+  /* FIX: Explicit native 3D Matrix lock to eradicate hover flickering entirely */
+  .video-container video {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0) scale(1.01);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
   }
-}
 
+  /* Trigger zoom strictly within the same hardware layer string */
+  .group:hover .video-container video {
+    transform: translate3d(0, 0, 0) scale(1.04);
+  }
+
+  ::selection {
+    background: #0038FF;
+    color: #fcfcff;
+  }
 </style>
-</head>
-<body>
 
-<nav>
-  <a href="/" class="nav-name">curiousrobert</a>
-  <div class="nav-links">
-    <a href="/about">About</a>
-    <a href="mailto:curiousrobertmail@gmail.com">Contact</a>
-  </div>
-</nav>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.05,
+    rootMargin: "0px 0px -20px 0px" 
+  });
 
-<div class="header">
-  <h1 class="header-title">Systems<br><span>in motion</span></h1>
-  <div class="header-right">
-    <p class="header-sub">Brand &amp; Motion Designer<br>Bucharest / Working Globally<br>2024 — 2026</p>
-    <p class="header-count">Portfolio</p>
-  </div>
-</div>
-
-<div class="grid">
-
-  <a href="/projects/visitbucharest" class="project project--soon">
-    <video src="/videos/visit-bucharest.mp4" autoplay muted loop playsinline></video>
-    <div class="project-overlay"></div>
-    <span class="project-num">01</span>
-    <span class="project-soon">Soon</span>
-    <div class="project-label">
-      <span class="project-name">Visit Bucharest</span>
-      <div class="project-right">
-        <span class="project-cat">Typographic Identity &amp; Motion</span>
-        <span class="project-year">2026</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="/projects/drip" class="project">
-    <video src="/videos/drip-video-5.mp4" autoplay muted loop playsinline></video>
-    <div class="project-overlay"></div>
-    <span class="project-num">02</span>
-    <div class="project-label">
-      <span class="project-name">Drip Soda</span>
-      <div class="project-right">
-        <span class="project-cat">Brand Identity &amp; Motion</span>
-        <span class="project-year">2026</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="/projects/semn" class="project">
-    <video src="/videos/semn-video-1.mp4" autoplay muted loop playsinline></video>
-    <div class="project-overlay"></div>
-    <span class="project-num">03</span>
-    <div class="project-label">
-      <span class="project-name">Semn</span>
-      <div class="project-right">
-        <span class="project-cat">Typographic Motion Study</span>
-        <span class="project-year">2025</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="/projects/promptlab" class="project">
-    <video src="/videos/promptlab-video-2.mp4" autoplay muted loop playsinline></video>
-    <div class="project-overlay"></div>
-    <span class="project-num">04</span>
-    <div class="project-label">
-      <span class="project-name">Promptlab.io</span>
-      <div class="project-right">
-        <span class="project-cat">Identity, Motion &amp; Digital Product</span>
-        <span class="project-year">2025</span>
-      </div>
-    </div>
-  </a>
-
-</div>
-
-<footer>
-  <p>© Curious Robert 2026</p>
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to top ↑</a>
-</footer>
-
-</body>
-</html>
+  document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+</script>

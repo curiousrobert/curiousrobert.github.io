@@ -2,138 +2,84 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Project Detail — curiousrobert">
+<Layout title="Drip Soda — curiousrobert">
   
-  <nav class="w-full px-10 py-6 flex justify-between items-center bg-[#fcfcff]/80 backdrop-blur-md sticky top-0 z-50 border-b border-[#E2E2E2]">
+  <nav class="w-full px-6 md:px-10 py-6 flex justify-between items-center bg-[#fcfcff]/90 backdrop-blur-md sticky top-0 z-50">
     <div class="flex flex-col">
-      <a href="/" class="text-[0.7rem] font-bold font-mono tracking-[0.04em] uppercase text-[#080808] no-underline transition-opacity hover:opacity-70">
+      <a href="/" class="text-[0.7rem] font-bold font-mono tracking-wider uppercase text-[#080808] no-underline transition-opacity hover:opacity-50">
         curiousrobert
       </a>
     </div>
 
-    <div class="flex gap-10 font-mono text-[0.65rem] font-medium tracking-[0.06em] uppercase">
-      <a href="/" class="text-[#6E6E6E] hover:text-[#080808] transition-colors no-underline">Home</a>
-      <a href="/about" class="text-[#6E6E6E] hover:text-[#080808] transition-colors no-underline">About</a>
-      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#6E6E6E] hover:text-[#080808] transition-colors no-underline">Contact</a>
+    <div class="flex gap-8 md:gap-12 font-mono text-[0.65rem] font-medium tracking-widest uppercase">
+      <a href="/" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Home</a>
+      <a href="/about" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">About</a>
+      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Contact</a>
     </div>
   </nav>
 
-  <main class="w-full pt-16 pb-0 bg-[#fcfcff]">
+  <main class="w-full pb-0 bg-[#fcfcff]">
     
-    <header class="px-10 max-w-[1800px] mx-auto mb-16">
-        <h1 class="font-mono font-bold text-[9vw] md:text-[6.8vw] leading-none tracking-tighter uppercase text-[#080808] reveal-up">
-          drip soda
-        </h1>
-        <div class="mt-8 border-t border-[#E2E2E2] pt-5 flex flex-col gap-2 md:flex-row md:justify-between md:items-center font-mono text-[0.65rem] uppercase tracking-widest text-[#6E6E6E] reveal-up">
-            <span>Project 02</span>
-            <span>Brand &amp; Motion Design 2026</span>
+    <header class="px-6 md:px-10 max-w-[1800px] mx-auto pt-12 md:pt-20 mb-16 md:mb-32">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 md:mb-12">
+            <h1 class="font-sans font-bold text-[16vw] md:text-[11vw] leading-[0.8] tracking-tighter uppercase text-[#080808] reveal-up m-0 origin-left">
+              drip soda
+            </h1>
+            <div class="font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] text-[#6E6E6E] reveal-up md:text-right pb-1 md:pb-3 md:max-w-[200px] leading-relaxed">
+              Project 02 <br class="hidden md:block" />Brand & Motion <br class="hidden md:block" />2026
+            </div>
+        </div>
+
+        <div class="w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden reveal-up bg-[#E2E2E2]">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover scale-[1.02]">
+            <source src="/videos/drip-video-5.mp4" type="video/mp4">
+          </video>
         </div>
     </header>
 
-    <section class="px-10 max-w-[1800px] mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+    <section class="px-6 md:px-10 max-w-[1400px] mx-auto mb-20 md:mb-40 reveal-up">
+      <h2 class="font-sans text-[2rem] md:text-[4rem] lg:text-[4.5rem] leading-[1.05] tracking-tight text-[#080808] font-medium max-w-[1200px]">
+        Motion timing follows mechanical easing and the unpredictable properties of carbonation, reinforcing the sensory qualities of the beverage.
+      </h2>
+    </section>
+
+    <section class="px-6 md:px-10 max-w-[1800px] mx-auto pb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         
         <div class="lg:col-span-4">
-          <div class="lg:sticky lg:top-32 space-y-12 pb-12">
+          <div class="lg:sticky lg:top-32 flex flex-col gap-12 md:gap-16 pb-12">
             
             <div class="reveal-up">
-              <h3 class="font-mono text-[0.6rem] uppercase tracking-widest mb-4 text-[#6E6E6E] opacity-60">Project Overview</h3>
-              <p class="font-mono text-sm md:text-base text-[#080808] leading-relaxed">
-                Motion and audio design through a personal project centered around a fictional beverage brand called "drip"
+              <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-4 text-[#888888]">The Brief</h3>
+              <p class="font-sans text-base md:text-lg text-[#080808] leading-relaxed">
+                Establish typography as a reactive liquid system, where motion follows compression, inertia, and elastic release, ensuring behavior reflects actual viscosity rather than strict mechanical animation.
               </p>
             </div>
 
-            <div class="reveal-up space-y-6">
-              <p class="font-mono text-[11px] text-[#6E6E6E] leading-relaxed">
-                <strong class="text-[#080808] uppercase font-bold tracking-wider block mb-1">Idea:</strong> 
-                Create a bold motion system for a beverage ad and make use of sound design to make it "pop".
-              </p>
-
-              <p class="font-mono text-[11px] text-[#6E6E6E] leading-relaxed">
-                <strong class="text-[#080808] uppercase font-bold tracking-wider block mb-1">Translation:</strong> 
-                Motion timing follows mechanical easing and properties of carbonation, reinforcing the sensory qualities of the beverage.
-              </p>
-              
-              <p class="font-mono text-[11px] text-[#6E6E6E] leading-relaxed">
-                <strong class="text-[#080808] uppercase font-bold tracking-wider block mb-1">Direction and constraints:</strong> 
-                Establish typography as a reactive liquid system, where motion follows compression, inertia, and elastic release, ensuring behavior reflects viscosity rather than mechanical animation.
-              </p>
-              
-              <div class="pt-6 border-t border-[#E2E2E2]">
-                <h4 class="font-mono text-[0.6rem] uppercase tracking-widest mb-3 text-[#6E6E6E] opacity-60">Tool Stack</h4>
-                <ul class="font-mono text-[11px] uppercase space-y-1.5 tracking-wider text-[#080808]">
-                  <li>Figma / Illustrator</li>
-                  <li>After Effects</li>
-                  <li>Cavalry / Ableton</li>
-                </ul>
-              </div>
+            <div class="reveal-up">
+              <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-4 text-[#888888]">Stack & Approach</h3>
+              <ul class="font-sans text-base text-[#080808] space-y-1.5">
+                <li>Figma & Illustrator</li>
+                <li>After Effects</li>
+                <li>Cavalry</li>
+                <li>Ableton (Sound Design)</li>
+              </ul>
             </div>
 
-            <div class="pt-6 border-t border-[#E2E2E2]">
-              <h4 class="font-mono text-[0.6rem] uppercase tracking-widest mb-6 text-[#6E6E6E] opacity-60">
-                Design System Assets
-              </h4>
-
-              <div class="mb-8">
-                <h5 class="font-mono text-[0.55rem] uppercase tracking-widest mb-3 text-[#6E6E6E] opacity-50">
-                  Typography
-                </h5>
-
-                <ul class="space-y-4">
-                  <li>
-                    <div class="font-mono text-sm font-bold text-[#080808]">Space Mono</div>
-                    <div class="font-mono text-[9px] uppercase tracking-wider text-[#6E6E6E] mt-1">
-                      Primary — Headlines &amp; Motion System
-                    </div>
-                  </li>
-                </ul>
+            <div class="reveal-up space-y-8">
+              <div>
+                <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-3 text-[#888888]">Typography System</h3>
+                <div class="font-mono text-sm text-[#080808]">Space Mono</div>
               </div>
 
               <div>
-                <h5 class="font-mono text-[0.55rem] uppercase tracking-widest mb-3 text-[#6E6E6E] opacity-50">
-                  Color Token Map
-                </h5>
-
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between py-1">
-                    <div class="flex items-center gap-3">
-                      <div class="w-6 h-6 bg-[#F8A003] border border-[#E2E2E2]"></div>
-                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Orange</span>
-                    </div>
-                    <span class="font-mono text-[10px] text-[#6E6E6E]">#F8A003</span>
-                  </div>
-
-                  <div class="flex items-center justify-between py-1">
-                    <div class="flex items-center gap-3">
-                      <div class="w-6 h-6 bg-[#739700] border border-[#E2E2E2]"></div>
-                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Green</span>
-                    </div>
-                    <span class="font-mono text-[10px] text-[#6E6E6E]">#739700</span>
-                  </div>
-
-                  <div class="flex items-center justify-between py-1">
-                    <div class="flex items-center gap-3">
-                      <div class="w-6 h-6 bg-[#120F03] border border-[#E2E2E2]"></div>
-                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Black</span>
-                    </div>
-                    <span class="font-mono text-[10px] text-[#6E6E6E]">#120F03</span>
-                  </div>
-
-                  <div class="flex items-center justify-between py-1">
-                    <div class="flex items-center gap-3">
-                      <div class="w-6 h-6 bg-[#E8EBDC] border border-[#E2E2E2]"></div>
-                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Off White</span>
-                    </div>
-                    <span class="font-mono text-[10px] text-[#6E6E6E]">#E8EBDC</span>
-                  </div>
-
-                  <div class="flex items-center justify-between py-1">
-                    <div class="flex items-center gap-3">
-                      <div class="w-6 h-6 bg-[#FDB918] border border-[#E2E2E2]"></div>
-                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#080808]">Yellow</span>
-                    </div>
-                    <span class="font-mono text-[10px] text-[#6E6E6E]">#FDB918</span>
-                  </div>
+                <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-4 text-[#888888]">Brand Palette</h3>
+                <div class="flex gap-2">
+                  <div class="w-8 h-8 bg-[#F8A003]" title="#F8A003"></div>
+                  <div class="w-8 h-8 bg-[#739700]" title="#739700"></div>
+                  <div class="w-8 h-8 bg-[#120F03]" title="#120F03"></div>
+                  <div class="w-8 h-8 bg-[#E8EBDC] border border-[#E2E2E2]" title="#E8EBDC"></div>
+                  <div class="w-8 h-8 bg-[#FDB918]" title="#FDB918"></div>
                 </div>
               </div>
             </div>
@@ -141,36 +87,35 @@ import Layout from '../../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="lg:col-span-8 space-y-12 md:space-y-24 pb-24">
+        <div class="lg:col-span-8 space-y-16 md:space-y-32">
           
-          <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover scale-[1.01]">
-              <source src="/videos/drip-video-5.mp4" type="video/mp4">
+          <div class="reveal-up overflow-hidden bg-[#E2E2E2]">
+            <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
+              <source src="/videos/drip-video-1.mp4" type="video/mp4">
             </video>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
-              <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                <source src="/videos/drip-video-1.mp4" type="video/mp4">
-              </video>
-            </div>
-           
-            <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
-              <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <div class="reveal-up md:w-4/5 ml-auto">
+             <p class="font-sans text-xl md:text-3xl leading-snug text-[#080808] tracking-tight">
+               By blending high-contrast palettes with snappy, elastic motion, the identity system feels simultaneously highly structured and refreshingly chaotic.
+             </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
+            <div class="md:col-span-5 reveal-up overflow-hidden bg-[#E2E2E2]">
+              <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
                 <source src="/videos/drip-video-2.mp4" type="video/mp4">
               </video>
             </div>
+            <div class="md:col-span-7 reveal-up overflow-hidden bg-[#E2E2E2]">
+              <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
+                <source src="/videos/drip-video-3.mov" type="video/mp4">
+              </video>
+            </div>
           </div>
 
-          <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
-              <source src="/videos/drip-video-3.mov" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="reveal-up overflow-hidden border border-[#E2E2E2] bg-[#fcfcff]">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <div class="reveal-up overflow-hidden bg-[#E2E2E2]">
+            <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
               <source src="/videos/drip-video-4.mp4" type="video/mp4">
             </video>
           </div>
@@ -179,26 +124,35 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
-    <footer class="w-full bg-[#080808] px-10 py-16 reveal-up">
-        <div class="max-w-[1800px] mx-auto flex flex-col gap-6 md:flex-row justify-between items-start md:items-center font-mono text-[0.65rem] uppercase tracking-[0.06em] text-white/50">
+    <footer class="w-full bg-[#080808] px-6 md:px-10 py-16 reveal-up">
+        <div class="max-w-[1800px] mx-auto flex flex-col gap-8 md:flex-row justify-between items-start md:items-center font-mono text-[10px] md:text-xs uppercase tracking-widest text-[#888888]">
           <p class="m-0">© Curious Robert 2026</p>
-          <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Romania</p>
-          <a href="/projects/promptlab" class="text-white/50 hover:text-white transition-colors no-underline font-bold">Next Project →</a>
+          <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Global</p>
+          <a href="/projects/promptlab" class="text-[#fcfcff] hover:opacity-70 transition-opacity no-underline flex items-center gap-2">
+            Next Project <span>→</span>
+          </a>
        </div>
     </footer>
   </main>
 </Layout>
 
 <style>
-  /* System Interlocking Reveal Architecture */
+  /* Premium Easing for Scroll Reveals */
   .reveal-up {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
   }
   .reveal-up.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  
+  /* Text selection styling for a premium feel */
+  ::selection {
+    background: #080808;
+    color: #fcfcff;
   }
 </style>
 
@@ -209,7 +163,10 @@ import Layout from '../../layouts/Layout.astro';
         entry.target.classList.add('is-visible');
       }
     });
-  }, { threshold: 0.05 });
+  }, { 
+    threshold: 0.1, 
+    rootMargin: "0px 0px -50px 0px" 
+  });
 
   document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
 </script>

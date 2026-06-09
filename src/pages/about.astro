@@ -4,99 +4,154 @@ import { Image } from 'astro:assets';
 import profilePic from '../assets/profile_pic.png';
 ---
 
-<Layout title="about.curiousrobert">
+<Layout title="About — curiousrobert">
   
-  <nav class="w-full px-6 py-6 md:px-12 md:py-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-start mix-blend-difference text-[#F2F2F2]">
+  <nav class="w-full px-6 md:px-10 py-6 flex justify-between items-center bg-[#fcfcff]/90 backdrop-blur-md sticky top-0 z-50">
     <div class="flex flex-col">
-      <a href="/" class="text-2xl font-normal tracking-widest leading-none hover:opacity-50 transition">
-        curiousrobert<br/>
+      <a href="/" class="text-[0.7rem] font-bold font-mono tracking-wider uppercase text-[#080808] no-underline transition-opacity hover:opacity-50">
+        curiousrobert
       </a>
-      <span class="font-mono text-[10px] mt-2 opacity-60 hidden md:block">
-        2026 // Bucharest
-      </span>
     </div>
 
-    <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
-      <a href="/" class="opacity-50 hover:opacity-100 transition-opacity">Home</a>
-      <a href="/about" class="border-b border-white pb-0.5">About</a> 
-      <a href="mailto:curiousrobertmail@gmail.com" class="opacity-50 hover:opacity-100 transition-opacity">Contact</a>
+    <div class="flex gap-8 md:gap-12 font-mono text-[0.65rem] font-medium tracking-widest uppercase">
+      <a href="/" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Home</a>
+      <a href="/about" class="text-[#080808] border-b border-[#080808] pb-0.5 no-underline">About</a>
+      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Contact</a>
     </div>
   </nav>
 
-  <main class="w-full max-w-[1400px] mx-auto pt-12 md:pt-16 px-6 md:px-12 pb-24">
+  <main class="w-full pb-0 bg-[#fcfcff]">
 
-    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
-      
-      <aside class="md:col-span-4 relative">
-        <div class="md:sticky md:top-32 space-y-12 reveal-up">
-          
-          <div class="w-full bg-transparent overflow-hidden relative grayscale hover:grayscale-0 transition duration-700">
-             <Image
-               src={profilePic}
-               alt="Portrait"
-               width={1200}
-               height={1202}
-               widths={[320, 480, 640, 800, 1200]}
-               sizes="(min-width: 768px) 33vw, 90vw"
-               loading="lazy"
-               decoding="async"
-               class="w-full h-auto object-cover"
-             />
-          </div>
+    <header class="px-6 md:px-10 max-w-[1800px] mx-auto pt-12 md:pt-20 mb-16 md:mb-24">
+        <h1 class="font-sans font-bold text-[16vw] md:text-[11vw] leading-[0.8] tracking-tighter uppercase text-[#080808] reveal-up m-0 origin-left">
+          the studio
+        </h1>
+    </header>
 
-        </div>
-      </aside>
-
-      <article class="md:col-span-8 space-y-16 md:space-y-24">
+    <section class="px-6 md:px-10 max-w-[1800px] mx-auto pb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         
-        <div class="reveal-up">
-          <h2 class="text-3xl md:text-4xl font-bold italic tracking-tight text-black mb-8">About</h2>
-          <div class="space-y-8 text-xl md:text-2xl font-semibold leading-relaxed text-[#111] max-w-3xl">
-            <p>
-              Hi! My name is Marin Robert, an aspiring Brand & Motion Designer with a toolkit full of creativity, multidisciplinary tools and a passion for crafting unique visual identities.
-            </p>
-            <p>
-             I aspire in helping little and big brands alike to communicate their values and stories through compelling design solutions that leave a lasting impact.
+        <aside class="lg:col-span-5 relative">
+          <div class="lg:sticky lg:top-32 reveal-up">
+            <div class="w-full aspect-[4/5] bg-[#E2E2E2] overflow-hidden relative">
+              <Image
+                src={profilePic}
+                alt="Marin Robert - Portrait"
+                width={1200}
+                height={1500}
+                widths={[320, 480, 640, 800, 1200]}
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                loading="eager"
+                decoding="async"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-[1.01] hover:scale-[1.03]"
+              />
+            </div>
+            <div class="mt-4 flex justify-between font-mono text-[9px] md:text-[10px] uppercase tracking-widest text-[#888888]">
+              <span>Marin Robert</span>
+              <span>Bucharest, RO</span>
+            </div>
+          </div>
+        </aside>
+
+        <article class="lg:col-span-7 space-y-20 md:space-y-32 pt-4 md:pt-0">
+          
+          <div class="reveal-up space-y-8 md:space-y-12">
+            <h2 class="font-sans text-[2rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.05] tracking-tight text-[#080808] font-medium">
+              I am a Brand & Motion Designer bridging the gap between strategic identity and expressive motion.
+            </h2>
+            <p class="font-sans text-xl md:text-2xl text-[#6E6E6E] leading-relaxed max-w-[800px]">
+              My practice is built on multidisciplinary exploration. I help both emerging and established brands communicate their core values through compelling, system-driven design solutions that leave a lasting impact.
             </p>
           </div>
-        </div>
 
-        <div class="reveal-up">
-            <h2 class="text-3xl md:text-4xl font-bold italic tracking-tight text-black mb-8">Toolkit</h2>
-            <div class="flex flex-wrap gap-4">
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">After Effects</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Cavalry</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Blender 3D</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Figma</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">DaVinci Resolve</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Affinity</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Illustrator</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Photoshop</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Jitter</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">Ableton</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">CSS</span>
-                <span class="px-4 py-2 border border-black rounded-full font-mono text-sm uppercase font-bold hover:bg-black hover:text-white transition">HTML</span>
+          <div class="reveal-up pt-12 border-t border-[#E2E2E2]">
+            <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-12 text-[#888888]">
+              Technical Capabilities
+            </h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8">
+              <div>
+                <h4 class="font-sans text-lg md:text-xl font-bold text-[#080808] mb-4">Motion</h4>
+                <ul class="font-mono text-[10px] md:text-xs text-[#6E6E6E] space-y-2 uppercase tracking-wider">
+                  <li>After Effects</li>
+                  <li>Cavalry</li>
+                  <li>Jitter</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-sans text-lg md:text-xl font-bold text-[#080808] mb-4">Identity</h4>
+                <ul class="font-mono text-[10px] md:text-xs text-[#6E6E6E] space-y-2 uppercase tracking-wider">
+                  <li>Figma</li>
+                  <li>Illustrator</li>
+                  <li>Photoshop</li>
+                  <li>Affinity</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-sans text-lg md:text-xl font-bold text-[#080808] mb-4">3D & Video</h4>
+                <ul class="font-mono text-[10px] md:text-xs text-[#6E6E6E] space-y-2 uppercase tracking-wider">
+                  <li>Blender 3D</li>
+                  <li>DaVinci Resolve</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-sans text-lg md:text-xl font-bold text-[#080808] mb-4">Audio</h4>
+                <ul class="font-mono text-[10px] md:text-xs text-[#6E6E6E] space-y-2 uppercase tracking-wider">
+                  <li>Ableton Live</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-sans text-lg md:text-xl font-bold text-[#080808] mb-4">Creative Dev</h4>
+                <ul class="font-mono text-[10px] md:text-xs text-[#6E6E6E] space-y-2 uppercase tracking-wider">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Tailwind</li>
+                </ul>
+              </div>
+
             </div>
-        </div>
+          </div>
 
-      </article>
+        </article>
 
+      </div>
     </section>
 
-    <footer class="mt-24 md:mt-48 px-6 md:px-12 py-12 border-t border-black/10 reveal-up">
-        <div class="flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-gray-500">
-         <p>© Curious Robert 2026</p>
-         <p>Bucharest / Romania</p>
-         <div class="flex gap-6 mt-4 md:mt-0">
-             <a href="#" class="hover:text-black transition"></a>
-             <a href="#" class="hover:text-black transition"></a>
-             <a href="#" class="hover:text-black transition"></a>
-         </div>
-       </div>
+    <footer class="w-full bg-[#080808] px-6 md:px-10 py-16 reveal-up">
+      <div class="max-w-[1800px] mx-auto flex flex-col gap-8 md:flex-row justify-between items-start md:items-center font-mono text-[10px] md:text-xs uppercase tracking-widest text-[#888888]">
+        <p class="m-0">© Curious Robert 2026</p>
+        <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Global</p>
+        <a href="mailto:curiousrobertmail@gmail.com" class="text-[#fcfcff] hover:opacity-70 transition-opacity no-underline flex items-center gap-2">
+          Say Hello <span>→</span>
+        </a>
+      </div>
     </footer>
 
   </main>
 </Layout>
+
+<style>
+  /* Premium Easing for Scroll Reveals */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  .reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  ::selection {
+    background: #080808;
+    color: #fcfcff;
+  }
+</style>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
@@ -106,7 +161,10 @@ import profilePic from '../assets/profile_pic.png';
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { 
+    threshold: 0.1, 
+    rootMargin: "0px 0px -50px 0px" 
+  });
 
   document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
 </script>
