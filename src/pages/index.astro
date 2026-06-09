@@ -73,7 +73,7 @@ import Layout from '../layouts/Layout.astro';
           <a href="/projects/drip" class="group block no-underline">
             <div class="video-container w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-[#fcfcff] mb-6">
               <video 
-                src="/videos/drip-video-5.mp4" 
+                src="/videos/drip-video-2.mp4" 
                 autoplay 
                 muted 
                 loop 
@@ -159,7 +159,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <footer class="w-full bg-[#080808] px-6 md:px-10 py-16 reveal-up">
+    <footer class="w-full bg-[#080808] px-6 md:px-10 py-16">
       <div class="max-w-[1800px] mx-auto flex flex-col gap-8 md:flex-row justify-between items-start md:items-center font-mono text-[10px] md:text-xs uppercase tracking-widest text-[#888888]">
         <p class="m-0">© Curious Robert 2026</p>
         <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Global</p>
@@ -196,7 +196,7 @@ import Layout from '../layouts/Layout.astro';
     transform: translateZ(0);
   }
 
-  /* FIX: Explicit native 3D Matrix lock to eradicate hover flickering entirely */
+  /* Explicit native 3D Matrix lock to maintain uninterrupted hardware layers */
   .video-container video {
     will-change: transform;
     backface-visibility: hidden;
@@ -207,7 +207,6 @@ import Layout from '../layouts/Layout.astro';
     transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Trigger zoom strictly within the same hardware layer string */
   .group:hover .video-container video {
     transform: translate3d(0, 0, 0) scale(1.04);
   }
