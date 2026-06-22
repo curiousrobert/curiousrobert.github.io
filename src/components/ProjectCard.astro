@@ -1,69 +1,83 @@
 ---
-import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
-
 interface Props {
   title: string;
   category: string;
+  number: string;
   year: string;
-  href: string;
-  videoSrc?: string; // Optional
-  imageSrc?: ImageMetadata; // Optional
-  className?: string;
+  videoSrc: string;
+  imageSrc: string;
+  status?: string;
+  colSpan?: string;
+  aspectRatio?: string;
+  href?: string;
 }
 
-const { title, category, year, videoSrc, imageSrc, href, className } = Astro.props;
+const { 
+  title, 
+  category, 
+  number, 
+  year, 
+  videoSrc, 
+  imageSrc, 
+  status, 
+  colSpan = "md:col-span-6", 
+  aspectRatio = "aspect-[4/3]", 
+  href = "#" 
+} = Astro.props;
 
-// Shared classes to keep the hover effects identical
-const mediaClasses = "h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105";
+const transitionSlug = title.toLowerCase().replace(/\s+/g, '-');
 ---
 
-<a href={href} class={`group block relative ${className}`}>
-  <div class="relative w-full aspect-[4/5] md:aspect-square overflow-hidden rounded-none md:rounded-2xl transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:rounded-none">
+<div class={`reveal-up flex flex-col ${colSpan}`}>
+  <a href={href} class="group block no-underline h-full" aria-label={`View ${title} case study`}>
     
-    {videoSrc ? (
+    <!-- Brutalist container with sharp borders and hover shadow -->
+    <div transition:name={`media-${transitionSlug}`} class={`media-container w-full ${aspectRatio} overflow-hidden bg-[#e0e0e0] relative mb-4 border-2 border-[#0D0D0D] transition-all duration-300 group-hover:shadow-[8px_8px_0px_0px_#0004ff]`}>
+      
+      <!-- Tactile Pixelated Hover Overlay -->
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSIvPjwvc3ZnPg==')] opacity-0 group-hover:opacity-100 z-30 transition-opacity duration-300 pointer-events-none mix-blend-overlay"></div>
+
+      <!-- Simultaneous Image & Video Execution -->
+      <img 
+        src={imageSrc} 
+        alt={`Cover image for ${title}`} 
+        class="absolute inset-0 w-[101%] h-[101%] object-cover z-20 transition-opacity duration-700 ease-in-out group-hover:opacity-0" 
+        loading="lazy" 
+        onerror="this.style.display='none'"
+      />
+      
       <video 
-        src={videoSrc}
+        src={videoSrc} 
         autoplay 
         muted 
         loop 
         playsinline 
-        class={mediaClasses}
+        class="absolute inset-0 w-full h-full object-cover z-10"
       ></video>
-    ) : imageSrc ? (
-      <Image
-        src={imageSrc}
-        alt={`${title} preview`}
-        width={800}
-        height={800}
-        widths={[320, 480, 640, 800]}
-        sizes="(min-width: 768px) 50vw, 90vw"
-        loading="lazy"
-        decoding="async"
-        class={mediaClasses}
-      />
-    ) : null}
-
-    <div class="absolute inset-0 bg-black/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-    
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-      <div class="bg-white/90 backdrop-blur-sm px-6 py-2 rounded-full">
-        <span class="font-mono text-xs font-bold uppercase tracking-widest text-black">View Case</span>
-      </div>
+      
+      {status && (
+        <div class="absolute top-4 right-4 font-primary text-[10px] tracking-[0.15em] uppercase bg-[#0004ff] text-[#F8F8F8] px-3 py-1.5 z-40 font-bold border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]">
+          {status}
+        </div>
+      )}
     </div>
-  </div>
 
-  <div class="mt-4 border-t border-black/10 pt-3 flex justify-between items-start group-hover:border-black transition-colors duration-500">
-    <div>
-      <h3 class="text-2xl md:text-3xl font-normal tracking-tighter uppercase leading-[0.9]">{title}</h3>
-      <div class="flex flex-wrap gap-2 mt-2">
-        <span class="font-mono text-[10px] uppercase tracking-wider text-gray-500 border border-gray-300 px-1.5 py-0.5 rounded-sm group-hover:border-black group-hover:text-black transition-colors">
+    <!-- Data Grid: utilizing font contrast -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 border-t-2 border-[#0D0D0D] pt-3 mt-auto">
+      <div>
+        <h2 transition:name={`title-${transitionSlug}`} class="font-primary font-black text-2xl md:text-3xl uppercase tracking-tighter text-[#0D0D0D] mb-0.5 group-hover:text-[#0004ff] transition-colors">
+          {title}
+        </h2>
+        <p class="font-secondary text-[14px] md:text-[16px] tracking-wide text-[#6E6E6E] italic">
           {category}
-        </span>
+        </p>
+      </div>
+      
+      <div class="font-primary text-[11px] md:text-[12px] text-left md:text-right leading-tight uppercase tracking-[0.15em] bg-[#0D0D0D] text-[#F8F8F8] px-2 py-1 border border-[#0D0D0D]">
+        <span class="inline-block font-black mr-2">{number}</span>
+        <span class="inline-block font-medium opacity-70">{year}</span>
       </div>
     </div>
-    <span class="font-mono text-xs font-bold text-gray-400 group-hover:text-black transition-colors">
-      ( {year} )
-    </span>
-  </div>
-</a>
+
+  </a>
+</div>

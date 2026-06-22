@@ -1,237 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<Layout title="curiousrobert — Systems in Motion">
+<Layout title="curiousrobert — Strategic Chaos">
   
-  <nav class="w-full px-6 md:px-10 py-6 flex justify-between items-center bg-[#fcfcff]/90 backdrop-blur-md sticky top-0 z-50">
+  <nav transition:name="site-nav" class="w-full px-6 md:px-10 py-5 flex justify-between items-center bg-[#F8F8F8]/90 backdrop-blur-md sticky top-0 z-50 border-b-2 border-[#0D0D0D]">
     <div class="flex flex-col">
-      <a href="/" class="text-[1 rem] font-bold font-mono tracking-wider uppercase text-[#080808] no-underline transition-opacity hover:opacity-50">
-        curiousrobert 🎈
+      <a href="/" class="group text-[1.1rem] font-black font-primary tracking-widest uppercase text-[#0D0D0D] no-underline flex items-center gap-2">
+        curiousrobert 
+        <span class="text-sm font-light text-[#0004ff] group-hover:rotate-90 transition-transform duration-300">✦</span>
       </a>
     </div>
 
-    <div class="flex gap-8 md:gap-12 font-mono text-[0.65rem] font-medium tracking-widest uppercase">
-      <a href="/" class="text-[#080808] border-b border-[#080808] pb-0.5 no-underline">Home</a>
-      <a href="/about" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">About</a>
-      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Contact</a>
+    <div class="flex gap-8 md:gap-12 font-primary text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase">
+      <a href="/" class="text-[#F8F8F8] bg-[#0004ff] px-3 py-1 border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D] hover:translate-y-[2px] hover:shadow-none transition-all no-underline">Index</a>
+      <a href="/about" class="text-[#0D0D0D] hover:text-[#0004ff] py-1 transition-colors no-underline">Info</a>
+      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#0D0D0D] hover:text-[#0004ff] py-1 transition-colors no-underline">Contact</a>
     </div>
   </nav>
 
-  <main class="w-full pb-0 bg-[#fcfcff]">
+  <main transition:animate="fade" class="w-full pb-0 bg-transparent">
     
-    <header class="px-6 md:px-10 max-w-[1800px] mx-auto pt-16 md:pt-28 mb-24 md:mb-44 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-      <div class="lg:col-span-8">
-        <h1 class="font-sans font-bold text-[15vw] md:text-[9.5vw] leading-[0.8] tracking-tighter uppercase text-[#080808] reveal-up m-0 origin-left">
-          Systems<br/><span class="text-[#0038FF]">and motion</span>
+    <header class="px-6 md:px-10 max-w-[1800px] mx-auto pt-20 md:pt-32 mb-16 md:mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b-2 border-[#0D0D0D] pb-16 relative">
+      <div class="lg:col-span-8 relative z-10">
+        <h1 id="hero-title" class="font-primary text-[19vw] md:text-[13vw] leading-[0.75] uppercase text-[#0D0D0D] m-0 flex flex-col cursor-default">
+          
+          <span class="font-black tracking-tight block overflow-hidden pb-4 -mb-4 relative z-10">
+            
+          </span>
+          
+          <span class="word-anim font-primary font-thin italic text-[#0004ff] text-[15vw] md:text-[10vw] leading-[0.75] tracking-tight w-fit cursor-pointer lowercase -rotate-3 origin-left relative z-20 -mt-6 md:-mt-10 ml-[12vw] md:ml-[22vw]" style="--delay: 0.35s">
+            portfolio
+          </span>
         </h1>
       </div>
-      <div class="lg:col-span-4 flex flex-col items-start lg:items-end font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] text-[#6E6E6E] reveal-up space-y-4 lg:text-right">
-        <p class="leading-relaxed">
-          Brand & Motion Designer<br/>Bucharest // Working Globally<br/>2024 — 2026
+      <div class="lg:col-span-4 flex flex-col items-start lg:items-end font-primary text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-[#0D0D0D] space-y-6 lg:text-right">
+        <p class="leading-relaxed font-semibold opacity-0 hero-fade border-l-2 lg:border-l-0 lg:border-r-2 border-[#0004ff] pl-4 lg:pl-0 lg:pr-4" style="--delay: 0.6s">
+          Multidisciplinary Artist<br/>Bucharest // Global<br/>2024 — 2026
         </p>
-        <span class="text-[#080808] font-bold tracking-widest block pt-4">Selected Case Studies [04]</span>
+        <span class="bg-[#0D0D0D] text-[#F8F8F8] font-black tracking-[0.2em] px-4 py-2 block opacity-0 hero-fade border-2 border-[#0D0D0D] shadow-[4px_4px_0px_0px_#0004ff]" style="--delay: 0.7s">
+          Selected Works [04]
+        </span>
       </div>
     </header>
 
-    <section class="px-6 md:px-10 max-w-[1800px] mx-auto pb-40">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-10 md:gap-y-20">
-        
-        <div class="md:col-span-7 reveal-up">
-          <a href="" class="group block no-underline opacity-50 hover:opacity-100 transition-all duration-700 ease-out">
-            <div class="video-container w-full aspect-[4/3] overflow-hidden bg-[#fcfcff] mb-6 relative">
-              <video 
-                src="/videos/halfpie-video-1.mp4" 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                class="w-90% h-90% object-cover"
-              ></video>
-              <div class="absolute top-4 right-4 font-mono text-[12px] tracking-widest uppercase bg-[#080808] text-white px-2 py-1">
-                Soon
-              </div>
-            </div>
-            <div class="flex justify-between items-start gap-4">
-              <div>
-                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1">
-                  Halfpie
-                </h2>
-                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
-                  Inclusive, physical to digital labeling system
-                </p>
-              </div>
-              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
-                <span class="block font-bold text-[#080808]">01</span>
-                <span class="block text-[10px] opacity-60">2026</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="md:col-span-5 md:mt-32 reveal-up">
-          <a href="/projects/drip" class="group block no-underline">
-            <div class="video-container w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-[#fcfcff] mb-6">
-              <video 
-                src="/videos/drip-video-2.mp4" 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                class="w-full h-full object-cover"
-              ></video>
-            </div>
-            <div class="flex justify-between items-start gap-4">
-              <div>
-                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1 group-hover:text-[#0038FF] transition-colors">
-                  Drip Soda
-                </h2>
-                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
-                  Brand Identity & Motion
-                </p>
-              </div>
-              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
-                <span class="block font-bold text-[#080808]">02</span>
-                <span class="block text-[10px] opacity-60">2026</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="md:col-span-5 reveal-up">
-          <a href="" class="group block no-underline opacity-50 hover:opacity-100 transition-all duration-700 ease-out">
-            <div class="video-container w-full aspect-[8/8] overflow-hidden bg-[#fcfcff] mb-6 relative grayscale">
-              <video 
-                src="/videos/semn-video-4.mp4" 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                class="w-full h-full object-cover"
-              ></video>
-              <div class="absolute top-4 right-4 font-mono text-[12px] tracking-widest uppercase bg-[#080808] text-white px-2 py-1">
-                Soon
-              </div>
-            </div>
-            <div class="flex justify-between items-start gap-4">
-              <div>
-                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1">
-                  Semn
-                </h2>
-                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
-                  Brand Identity & Motion
-                </p>
-              </div>
-              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
-                <span class="block font-bold text-[#080808]">01</span>
-                <span class="block text-[10px] opacity-60">2026</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="md:col-span-7 md:-mt-16 reveal-up">
-          <a href="/projects/promptlab" class="group block no-underline">
-            <div class="video-container w-full aspect-[16/10] md:aspect-[4/3] overflow-hidden bg-[#fcfcff] mb-6">
-              <video 
-                src="/videos/promptlab-video-2.mp4" 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                class="w-full h-full object-cover"
-              ></video>
-            </div>
-            <div class="flex justify-between items-start gap-4">
-              <div>
-                <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-[#080808] mb-1 group-hover:text-[#0038FF] transition-colors">
-                  Promptlab.io
-                </h2>
-                <p class="font-mono text-[10px] md:text-xs uppercase tracking-wider text-[#6E6E6E]">
-                  Identity, Motion & Digital Product
-                </p>
-              </div>
-              <div class="font-mono text-xs text-right text-[#6E6E6E] pt-1">
-                <span class="block font-bold text-[#080808]">04</span>
-                <span class="block text-[10px] opacity-60">2025</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
+    <section class="px-6 md:px-10 max-w-[1800px] mx-auto pb-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-x-12 md:gap-y-16">
+        <ProjectCard title="Halfpie" category="Inclusive, physical to digital labeling system" number="01" year="2026" imageSrc="/images/halfpie-cover.jpg" videoSrc="/videos/halfpie-video-2.mp4" status="Work in progress" colSpan="md:col-span-7" aspectRatio="aspect-[4/3] md:aspect-[16/10]" />
+        <ProjectCard title="Drip Soda" category="Brand Identity & Motion" number="02" year="2026" imageSrc="/images/drip-cover.jpg" videoSrc="/videos/drip-video-2.mp4" colSpan="md:col-span-5 md:mt-24" aspectRatio="aspect-[4/5] md:aspect-[3/4]" href="/projects/drip" />
+        <ProjectCard title="Semn" category="Brand Identity & Motion" number="03" year="2026" imageSrc="/images/semn-cover.jpg" videoSrc="/videos/semn-video-4.mp4" status="Soon" colSpan="md:col-span-5" aspectRatio="aspect-square" />
+        <ProjectCard title="Promptlab IO" category="Identity, Motion & Digital Product" number="04" year="2025" imageSrc="/images/promptlab-cover.jpg" videoSrc="/videos/promptlab-video-1.mp4" colSpan="md:col-span-7 md:-mt-12" aspectRatio="aspect-[4/3] md:aspect-[16/9]" href="/projects/promptlab" />
       </div>
     </section>
 
-    <footer class="w-full bg-[#080808] px-6 md:px-10 py-16">
-      <div class="max-w-[1800px] mx-auto flex flex-col gap-8 md:flex-row justify-between items-start md:items-center font-mono text-[10px] md:text-xs uppercase tracking-widest text-[#888888]">
-        <p class="m-0">© Curious Robert 2026</p>
-        <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Global</p>
-        <button onclick="window.scrollTo({top:0,behavior:'smooth'});" class="bg-transparent border-none text-[#fcfcff] hover:opacity-70 transition-opacity cursor-pointer font-mono p-0 text-[10px] md:text-xs uppercase tracking-widest">
-          Back to top <span class="ml-1">↑</span>
+    <footer transition:name="site-footer" class="w-full bg-[#0D0D0D] px-6 md:px-10 py-12 border-t-4 border-[#0004ff]">
+      <div class="max-w-[1800px] mx-auto flex flex-col gap-6 md:flex-row justify-between items-start md:items-center font-primary text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#888888]">
+        <p class="m-0 font-semibold">© Curious Robert 2026</p>
+        <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2 font-bold text-[#F8F8F8]">Bucharest / Global</p>
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'});" class="bg-transparent border-none text-[#F8F8F8] hover:text-[#0004ff] transition-colors cursor-pointer font-primary p-0 text-[10px] md:text-xs uppercase tracking-[0.2em] font-black flex items-center gap-2 group">
+          Back to top <span class="text-sm font-light group-hover:-translate-y-1 transition-transform">↑</span>
         </button>
       </div>
     </footer>
-
   </main>
 </Layout>
 
-<style>
-  /* Premium Studio Animation Curves */
-  .reveal-up {
-    opacity: 0;
-    transform: translateY(30px);
-    will-change: transform, opacity; 
-    transition: opacity 1.4s cubic-bezier(0.215, 0.610, 0.355, 1), 
-                transform 1.4s cubic-bezier(0.215, 0.610, 0.355, 1);
-  }
-  
-  .reveal-up.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Structural lock on video parent wrapper */
-  .video-container {
-    isolation: isolate;
-    contain: paint;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-  }
-
-  /* Explicit native 3D Matrix lock to maintain uninterrupted hardware layers */
-  .video-container video {
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translate3d(0, 0, 0) scale(1.01);
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .group:hover .video-container video {
-    transform: translate3d(0, 0, 0) scale(1.04);
-  }
-
-  ::selection {
-    background: #0038FF;
-    color: #fcfcff;
-  }
-</style>
-
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+  document.addEventListener('astro:page-load', () => {
+    setTimeout(() => {
+      const hero = document.getElementById('hero-title');
+      if (hero) {
+        hero.classList.add('is-loaded');
+        hero.parentElement?.parentElement?.classList.add('is-loaded'); 
       }
-    });
-  }, { 
-    threshold: 0.05,
-    rootMargin: "0px 0px -20px 0px" 
-  });
+    }, 100);
 
-  document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+
+    document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+  });
 </script>

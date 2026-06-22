@@ -1,8 +1,9 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,47 +11,43 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;1,400&family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-		
-		<title>{title}</title>
-	</head>
-	<body class="bg-[#F2F2F2] text-[#0D0D0D] font-sans antialiased selection:bg-black selection:text-[#F2F2F2]">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Single Workhorse Typeface: Archivo (Variable Weights 100-900 + Italics) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  
+  <body class="bg-[#F8F8F8] text-[#0D0D0D] antialiased selection:bg-[#0004ff] selection:text-[#F8F8F8] relative min-h-screen">
+    
+    <!-- Generative Radial Grid Background for tactile texture -->
+    <div class="fixed inset-0 pointer-events-none opacity-[0.04] z-[-1]" style="background-image: radial-gradient(circle at 2px 2px, #0D0D0D 1.5px, transparent 0); background-size: 32px 32px;"></div>
+    
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	/* Custom Font Setup */
-	:root {
-		--font-brand: 'Inter', sans-serif;
-		--font-logic: 'Space Mono', monospace;
-	}
-	
-	body {
-		font-family: var(--font-brand);
-		font-weight: 400;
-	}
+  :root {
+    --font-primary: 'Archivo', system-ui, sans-serif;
+    --color-accent: #0004ff;
+  }
 
-	.font-mono {
-		font-family: var(--font-logic);
-		font-weight: 700;
-	}
+  /* Force optimal kerning and rendering for heavy font weights */
+  body {
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-	/* Smooth Reveal for elements */
-	.reveal {
-		animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-		opacity: 0;
-		transform: translateY(20px);
-	}
-
-	@keyframes revealUp {
-		to { opacity: 1; transform: translateY(0); }
-	}
+  .font-primary { font-family: var(--font-primary); }
 </style>
