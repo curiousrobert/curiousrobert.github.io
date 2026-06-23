@@ -28,16 +28,16 @@ const {
 const transitionSlug = title.toLowerCase().replace(/\s+/g, '-');
 ---
 
-<div class={`reveal-up flex flex-col ${colSpan}`}>
-  <a href={href} class="group block no-underline h-full" aria-label={`View ${title} case study`}>
+<!-- Added `self-start` here to prevent invisible grid stretching -->
+<div class={`reveal-up flex flex-col ${colSpan} self-start`}>
+  <!-- Removed `h-full` so the link bounds exactly match the content -->
+  <a href={href} class="group block no-underline w-full h-fit" aria-label={`View ${title} case study`}>
     
-    <!-- Brutalist container with sharp borders and hover shadow -->
+    <!-- Brutalist Media Container -->
     <div transition:name={`media-${transitionSlug}`} class={`media-container w-full ${aspectRatio} overflow-hidden bg-[#e0e0e0] relative mb-4 border-2 border-[#0D0D0D] transition-all duration-300 group-hover:shadow-[8px_8px_0px_0px_#0004ff]`}>
       
-      <!-- Tactile Pixelated Hover Overlay -->
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSIvPjwvc3ZnPg==')] opacity-0 group-hover:opacity-100 z-30 transition-opacity duration-300 pointer-events-none mix-blend-overlay"></div>
 
-      <!-- Simultaneous Image & Video Execution -->
       <img 
         src={imageSrc} 
         alt={`Cover image for ${title}`} 
@@ -56,24 +56,24 @@ const transitionSlug = title.toLowerCase().replace(/\s+/g, '-');
       ></video>
       
       {status && (
-        <div class="absolute top-4 right-4 font-primary text-[10px] tracking-[0.15em] uppercase bg-[#0004ff] text-[#F8F8F8] px-3 py-1.5 z-40 font-bold border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]">
+        <div class="absolute top-3 right-3 md:top-4 md:right-4 font-primary text-[9px] md:text-[10px] tracking-[0.15em] uppercase bg-[#0004ff] text-[#F8F8F8] px-3 py-1.5 z-40 font-bold border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]">
           {status}
         </div>
       )}
     </div>
 
-    <!-- Data Grid: utilizing font contrast -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 border-t-2 border-[#0D0D0D] pt-3 mt-auto">
-      <div>
-        <h2 transition:name={`title-${transitionSlug}`} class="font-primary font-black text-2xl md:text-3xl uppercase tracking-tighter text-[#0D0D0D] mb-0.5 group-hover:text-[#0004ff] transition-colors">
+    <!-- Data Grid -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 md:gap-4 border-t-2 border-[#0D0D0D] pt-3 mt-auto w-full">
+      <div class="w-full sm:w-auto">
+        <h2 transition:name={`title-${transitionSlug}`} class="font-primary font-black text-2xl md:text-3xl uppercase tracking-tight text-[#0D0D0D] mb-1 group-hover:text-[#0004ff] transition-colors leading-none w-fit">
           {title}
         </h2>
-        <p class="font-secondary text-[14px] md:text-[16px] tracking-wide text-[#6E6E6E] italic">
+        <p class="font-primary font-light text-[11px] md:text-[12px] tracking-widest uppercase text-[#6E6E6E] mt-1 w-fit">
           {category}
         </p>
       </div>
       
-      <div class="font-primary text-[11px] md:text-[12px] text-left md:text-right leading-tight uppercase tracking-[0.15em] bg-[#0D0D0D] text-[#F8F8F8] px-2 py-1 border border-[#0D0D0D]">
+      <div class="font-primary text-[10px] md:text-[11px] leading-tight uppercase tracking-[0.15em] bg-[#0D0D0D] text-[#F8F8F8] px-2 py-1.5 border border-[#0D0D0D] shrink-0 self-start sm:self-auto mt-2 sm:mt-0">
         <span class="inline-block font-black mr-2">{number}</span>
         <span class="inline-block font-medium opacity-70">{year}</span>
       </div>

@@ -10,14 +10,13 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden bg-[#F8F8F8]">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
-    <!-- Single Workhorse Typeface: Archivo (Variable Weights 100-900 + Italics) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -26,22 +25,32 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   
-  <body class="bg-[#F8F8F8] text-[#0D0D0D] antialiased selection:bg-[#0004ff] selection:text-[#F8F8F8] relative min-h-screen">
+  <body transition:animate="none" class="bg-[#F8F8F8] text-[#0D0D0D] antialiased selection:bg-[#0004ff] selection:text-[#F8F8F8] relative min-h-screen overflow-x-hidden w-full">
     
-    <!-- Generative Radial Grid Background for tactile texture -->
     <div class="fixed inset-0 pointer-events-none opacity-[0.04] z-[-1]" style="background-image: radial-gradient(circle at 2px 2px, #0D0D0D 1.5px, transparent 0); background-size: 32px 32px;"></div>
+    
+    <div 
+      id="curtain-overlay" 
+      transition:persist="curtain"
+      class="fixed inset-0 z-[9999] bg-[#0004ff] pointer-events-none curtain-idle"
+    ></div>
     
     <slot />
   </body>
 </html>
 
 <style is:global>
-  :root {
-    --font-primary: 'Archivo', system-ui, sans-serif;
-    --color-accent: #0004ff;
+  /* 🔥 THIS IS THE MAGIC FIX: Kills the native browser screenshot crossfade 🔥 */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+    mix-blend-mode: normal !important;
   }
 
-  /* Force optimal kerning and rendering for heavy font weights */
+  :root {
+    --font-primary: 'Archivo', system-ui, sans-serif;
+  }
+
   body {
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1, "liga" 1;
@@ -50,4 +59,101 @@ const { title } = Astro.props;
   }
 
   .font-primary { font-family: var(--font-primary); }
+
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(60px); 
+    will-change: transform, opacity;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease-out;
+  }
+  
+  .reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #curtain-overlay {
+    will-change: transform;
+    transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .curtain-idle { transform: translateY(100%); }
+  .curtain-cover { transform: translateY(0); }
+  .curtain-leave { transform: translateY(-100%); }
+  .curtain-reset { transition: none !important; transform: translateY(100%); }
 </style>
+
+<script>
+  document.addEventListener('astro:before-preparation', (event) => {
+    const curtain = document.getElementById('curtain-overlay');
+    if (!curtain) return;
+
+    curtain.classList.remove('pointer-events-none');
+    
+    // Start animation immediately
+    curtain.classList.remove('curtain-idle', 'curtain-leave', 'curtain-reset');
+    curtain.classList.add('curtain-cover');
+
+    const originalLoader = event.loader;
+    event.loader = async function() {
+      // Fetch the page AND wait for the 800ms animation at the EXACT SAME TIME
+      // This prevents network lag from breaking the animation timing
+      const fetchPromise = originalLoader();
+      const animationPromise = new Promise(resolve => setTimeout(resolve, 800));
+      
+      await Promise.all([fetchPromise, animationPromise]);
+    };
+  });
+
+  // Ensure the curtain stays locked down during the exact millisecond of the DOM swap
+  document.addEventListener('astro:after-swap', () => {
+    const curtain = document.getElementById('curtain-overlay');
+    if (curtain) {
+      curtain.classList.remove('curtain-idle', 'curtain-leave', 'curtain-reset');
+      curtain.classList.add('curtain-cover');
+    }
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const curtain = document.getElementById('curtain-overlay');
+    
+    if (curtain && curtain.classList.contains('curtain-cover')) {
+      // Wait 100ms for the browser to paint images/fonts behind the curtain
+      setTimeout(() => {
+        curtain.classList.remove('curtain-cover');
+        curtain.classList.add('curtain-leave');
+
+        setTimeout(() => {
+          curtain.classList.add('curtain-reset');
+          curtain.classList.remove('curtain-leave');
+          curtain.classList.add('pointer-events-none');
+          
+          // RequestAnimationFrame ensures CSS registers the reset instantly
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              curtain.classList.remove('curtain-reset');
+              curtain.classList.add('curtain-idle');
+            });
+          });
+        }, 800);
+      }, 100);
+    }
+
+    // Scroll Observer Re-Initialization
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.1, 
+      rootMargin: "0px 0px -50px 0px" 
+    });
+
+    document.querySelectorAll('.reveal-up:not(.is-visible)').forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>

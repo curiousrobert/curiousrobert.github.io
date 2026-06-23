@@ -3,50 +3,45 @@ import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<Layout title="curiousrobert — Strategic Chaos">
+<Layout title="curiousrobert selected works">
   
-  <nav transition:name="site-nav" class="w-full px-6 md:px-10 py-5 flex justify-between items-center bg-[#F8F8F8]/90 backdrop-blur-md sticky top-0 z-50 border-b-2 border-[#0D0D0D]">
-    <div class="flex flex-col">
-      <a href="/" class="group text-[1.1rem] font-black font-primary tracking-widest uppercase text-[#0D0D0D] no-underline flex items-center gap-2">
+  <nav transition:name="site-nav" class="w-full px-5 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center bg-[#F8F8F8]/90 backdrop-blur-md sticky top-0 z-50 border-b-2 border-[#0D0D0D] gap-5 md:gap-0">
+    <!-- Cleaned up flex container so the link doesn't stretch -->
+    <div class="flex items-center w-full md:w-auto">
+      <a href="/" class="group text-lg md:text-[1.1rem] font-black font-primary tracking-widest uppercase text-[#0D0D0D] no-underline flex items-center gap-2 w-fit">
         curiousrobert 
         <span class="text-sm font-light text-[#0004ff] group-hover:rotate-90 transition-transform duration-300">✦</span>
       </a>
     </div>
 
-    <div class="flex gap-8 md:gap-12 font-primary text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase">
-      <a href="/" class="text-[#F8F8F8] bg-[#0004ff] px-3 py-1 border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D] hover:translate-y-[2px] hover:shadow-none transition-all no-underline">Index</a>
-      <a href="/about" class="text-[#0D0D0D] hover:text-[#0004ff] py-1 transition-colors no-underline">Info</a>
-      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#0D0D0D] hover:text-[#0004ff] py-1 transition-colors no-underline">Contact</a>
+    <div class="flex flex-wrap gap-4 md:gap-12 font-primary text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase w-full md:w-auto justify-start md:justify-end">
+      <a href="/" class="text-[#F8F8F8] bg-[#0004ff] px-3 py-1.5 border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D] hover:translate-y-[2px] hover:shadow-none transition-all no-underline w-fit">Home</a>
+      <a href="/about" class="text-[#0D0D0D] hover:text-[#0004ff] py-1.5 transition-colors no-underline w-fit">Info</a>
+      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#0D0D0D] hover:text-[#0004ff] py-1.5 transition-colors no-underline w-fit">Contact</a>
     </div>
   </nav>
 
-  <main transition:animate="fade" class="w-full pb-0 bg-transparent">
+  <main class="w-full pb-0 bg-transparent">
     
-    <header class="px-6 md:px-10 max-w-[1800px] mx-auto pt-20 md:pt-32 mb-16 md:mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b-2 border-[#0D0D0D] pb-16 relative">
-      <div class="lg:col-span-8 relative z-10">
-        <h1 id="hero-title" class="font-primary text-[19vw] md:text-[13vw] leading-[0.75] uppercase text-[#0D0D0D] m-0 flex flex-col cursor-default">
-          
-          <span class="font-black tracking-tight block overflow-hidden pb-4 -mb-4 relative z-10">
-            
-          </span>
-          
-          <span class="word-anim font-primary font-thin italic text-[#0004ff] text-[15vw] md:text-[10vw] leading-[0.75] tracking-tight w-fit cursor-pointer lowercase -rotate-3 origin-left relative z-20 -mt-6 md:-mt-10 ml-[12vw] md:ml-[22vw]" style="--delay: 0.35s">
-            portfolio
-          </span>
+    <header class="px-5 md:px-10 max-w-[1800px] mx-auto pt-16 md:pt-32 mb-12 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-b-2 border-[#0D0D0D] pb-12 md:pb-16">
+      <div class="font-primary text-[#0D0D0D] max-w-2xl reveal-up">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[1.1] mb-4">
+          3D  <span class="text-[#0004ff] font-thin italic lowercase tracking-normal">Artist</span> <br class="hidden md:block" /> and Motion Designer
         </h1>
-      </div>
-      <div class="lg:col-span-4 flex flex-col items-start lg:items-end font-primary text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-[#0D0D0D] space-y-6 lg:text-right">
-        <p class="leading-relaxed font-semibold opacity-0 hero-fade border-l-2 lg:border-l-0 lg:border-r-2 border-[#0004ff] pl-4 lg:pl-0 lg:pr-4" style="--delay: 0.6s">
-          Multidisciplinary Artist<br/>Bucharest // Global<br/>2024 — 2026
+        <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.15em] text-[#6E6E6E] border-l-2 border-[#0004ff] pl-4 w-fit">
+          Bucharest or Globally <br/> 2024 — 2026
         </p>
-        <span class="bg-[#0D0D0D] text-[#F8F8F8] font-black tracking-[0.2em] px-4 py-2 block opacity-0 hero-fade border-2 border-[#0D0D0D] shadow-[4px_4px_0px_0px_#0004ff]" style="--delay: 0.7s">
-          Selected Works [04]
+      </div>
+
+      <div class="reveal-up" style="transition-delay: 100ms;">
+        <span class="inline-block bg-[#0D0D0D] text-[#F8F8F8] font-primary font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] px-4 py-2 border-2 border-[#0D0D0D] shadow-[4px_4px_0px_0px_#0004ff]">
+          Selected Works
         </span>
       </div>
     </header>
 
-    <section class="px-6 md:px-10 max-w-[1800px] mx-auto pb-24">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-x-12 md:gap-y-16">
+    <section class="px-5 md:px-10 max-w-[1800px] mx-auto pb-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-10 lg:gap-x-12 lg:gap-y-16">
         <ProjectCard title="Halfpie" category="Inclusive, physical to digital labeling system" number="01" year="2026" imageSrc="/images/halfpie-cover.jpg" videoSrc="/videos/halfpie-video-2.mp4" status="Work in progress" colSpan="md:col-span-7" aspectRatio="aspect-[4/3] md:aspect-[16/10]" />
         <ProjectCard title="Drip Soda" category="Brand Identity & Motion" number="02" year="2026" imageSrc="/images/drip-cover.jpg" videoSrc="/videos/drip-video-2.mp4" colSpan="md:col-span-5 md:mt-24" aspectRatio="aspect-[4/5] md:aspect-[3/4]" href="/projects/drip" />
         <ProjectCard title="Semn" category="Brand Identity & Motion" number="03" year="2026" imageSrc="/images/semn-cover.jpg" videoSrc="/videos/semn-video-4.mp4" status="Soon" colSpan="md:col-span-5" aspectRatio="aspect-square" />
@@ -54,11 +49,12 @@ import ProjectCard from '../components/ProjectCard.astro';
       </div>
     </section>
 
-    <footer transition:name="site-footer" class="w-full bg-[#0D0D0D] px-6 md:px-10 py-12 border-t-4 border-[#0004ff]">
-      <div class="max-w-[1800px] mx-auto flex flex-col gap-6 md:flex-row justify-between items-start md:items-center font-primary text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#888888]">
+    <footer transition:name="site-footer" class="w-full bg-[#0D0D0D] px-5 md:px-10 py-10 md:py-12 border-t-4 border-[#0004ff]">
+      <div class="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6 font-primary text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#888888]">
         <p class="m-0 font-semibold">© Curious Robert 2026</p>
         <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2 font-bold text-[#F8F8F8]">Bucharest / Global</p>
-        <button onclick="window.scrollTo({top:0,behavior:'smooth'});" class="bg-transparent border-none text-[#F8F8F8] hover:text-[#0004ff] transition-colors cursor-pointer font-primary p-0 text-[10px] md:text-xs uppercase tracking-[0.2em] font-black flex items-center gap-2 group">
+        <!-- Added w-fit to ensure the button doesn't stretch -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'});" class="bg-transparent border-none text-[#F8F8F8] hover:text-[#0004ff] transition-colors cursor-pointer font-primary p-0 text-[10px] md:text-xs uppercase tracking-[0.2em] font-black flex items-center gap-2 group w-fit">
           Back to top <span class="text-sm font-light group-hover:-translate-y-1 transition-transform">↑</span>
         </button>
       </div>
@@ -68,14 +64,6 @@ import ProjectCard from '../components/ProjectCard.astro';
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    setTimeout(() => {
-      const hero = document.getElementById('hero-title');
-      if (hero) {
-        hero.classList.add('is-loaded');
-        hero.parentElement?.parentElement?.classList.add('is-loaded'); 
-      }
-    }, 100);
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -83,8 +71,13 @@ import ProjectCard from '../components/ProjectCard.astro';
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+    }, { 
+      threshold: 0.05, 
+      rootMargin: "0px 0px -50px 0px" 
+    });
 
-    document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+    setTimeout(() => {
+      document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+    }, 50);
   });
 </script>
