@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import profilePic from '../assets/profile_pic.png';
 ---
 
-<Layout title="Info — curiousrobert">
+<Layout title="about me">
   
   <nav transition:name="site-nav" class="w-full px-5 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center bg-[#F8F8F8]/90 backdrop-blur-md sticky top-0 z-50 border-b-2 border-[#0D0D0D] gap-5 md:gap-0">
     <!-- Cleaned up flex container -->
@@ -26,7 +26,7 @@ import profilePic from '../assets/profile_pic.png';
       
       <div class="lg:col-span-4 flex flex-col items-start lg:items-end font-primary text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-[#0D0D0D] space-y-6 lg:text-right">
         <p class="leading-relaxed font-semibold opacity-0 hero-fade border-l-2 lg:border-l-0 lg:border-r-2 border-[#0004ff] pl-4 lg:pl-0 lg:pr-4 w-fit" style="--delay: 0.6s">
-          Marin Robert<br/>Bucharest // Global<br/>Est. 2024
+          Marin Robert<br/>Bucharest<br/>from 2024
         </p>
       </div>
     </header>
@@ -35,7 +35,7 @@ import profilePic from '../assets/profile_pic.png';
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         <aside class="lg:col-span-5 relative">
           <div class="lg:sticky lg:top-32 reveal-up">
-            <div class="w-full aspect-[4/5] bg-[#e0e0e0] overflow-hidden relative border-2 border-[#0D0D0D] transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#0004ff] group">
+            <div class="w-full aspect-[5/5] bg-[#e0e0e0] overflow-hidden relative border-2 border-[#0D0D0D] transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#0004ff] group">
               <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSIvPjwvc3ZnPg==')] opacity-0 group-hover:opacity-100 z-30 transition-opacity duration-300 pointer-events-none mix-blend-overlay"></div>
               <Image src={profilePic} alt="Marin Robert - Portrait" width={1200} height={1500} class="absolute inset-0 w-full h-full object-cover grayscale z-20 transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105" />
             </div>
