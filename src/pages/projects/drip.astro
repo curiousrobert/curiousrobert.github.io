@@ -2,171 +2,172 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="drip soda - curiousrobert's portfolio">
+<Layout title="drip soda project 2">
   
-  <nav class="w-full px-6 md:px-10 py-6 flex justify-between items-center bg-[#fcfcff]/90 backdrop-blur-md sticky top-0 z-50">
-    <div class="flex flex-col">
-      <a href="/" class="text-[1 rem] font-bold font-mono tracking-wider uppercase text-[#080808] no-underline transition-opacity hover:opacity-50">
-        curiousrobert 🎈
-      </a>
+  <nav class="w-full px-5 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center bg-[#F8F8F8]/90 backdrop-blur-md sticky top-0 z-50 border-b-2 border-[#0D0D0D] gap-5 md:gap-0">
+    <div class="flex items-center w-full md:w-auto">
+      <div class="w-fit block">
+        <a href="/">
+          <img src="/favicon.svg" alt="curiousrobert logo" class="w-20 h-20 md:w-28 md:h-28 object-contain hover:opacity-50 transition-opacity" />
+        </a>
+      </div>
     </div>
 
-    <div class="flex gap-8 md:gap-12 font-mono text-[0.65rem] font-medium tracking-widest uppercase">
-      <a href="/" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Home</a>
-      <a href="/about" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">About</a>
-      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#888888] hover:text-[#080808] transition-colors no-underline">Contact</a>
+    <div class="flex flex-wrap gap-4 md:gap-12 font-primary text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase w-full md:w-auto justify-start md:justify-end items-center">
+      <!-- 1. "Home" is now the active button with the brutalist blue shadow effect -->
+      <a href="/" class="text-[#F8F8F8] bg-[#0004ff] px-3 py-1.5 border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D] hover:translate-y-[2px] hover:shadow-none transition-all no-underline w-fit block">Home</a>
+      
+      <!-- 2. "Info" is renamed to "About" with transparent borders to stop jumping -->
+      <a href="/about" class="text-[#0D0D0D] hover:text-[#0004ff] px-3 py-1.5 border-2 border-transparent transition-colors no-underline w-fit block">About</a>
+      
+      <a href="mailto:curiousrobertmail@gmail.com" class="text-[#0D0D0D] hover:text-[#0004ff] px-3 py-1.5 border-2 border-transparent transition-colors no-underline w-fit block">Contact</a>
     </div>
   </nav>
 
-  <main class="w-full pb-0 bg-[#fcfcff]">
+  <main class="w-full pb-0 bg-transparent">
     
-    <header class="px-6 md:px-10 max-w-[1800px] mx-auto pt-12 md:pt-20 mb-16 md:mb-32">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 md:mb-12">
-            <h1 class="font-sans font-bold text-[16vw] md:text-[11vw] leading-[0.8] tracking-tighter uppercase text-[#080808] reveal-up m-0 origin-left">
-              drip soda
-            </h1>
-            <div class="font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] text-[#6E6E6E] reveal-up md:text-right pb-1 md:pb-3 md:max-w-[200px] leading-relaxed">
-              Project 02 <br class="hidden md:block" />Brand & Motion <br class="hidden md:block" />2026
-            </div>
-        </div>
+    <header class="px-5 md:px-10 max-w-[1800px] mx-auto pt-16 md:pt-32 mb-12 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-b-2 border-[#0D0D0D] pb-12 md:pb-16">
+      <div class="font-primary text-[#0D0D0D] max-w-2xl reveal-up">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[1.1] mb-4">
+          Drip <span class="text-[#0004ff] font-thin italic lowercase tracking-normal">Soda</span>
+        </h1>
+        <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.15em] text-[#6E6E6E] border-l-2 border-[#0004ff] pl-4 w-fit">
+          Brand & Motion <br/> 2026
+        </p>
+      </div>
 
-        <div class="w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden reveal-up bg-[#E2E2E2]">
-          <video autoplay muted loop playsinline class="w-full h-full object-cover scale-[1.02]">
-            <source src="/videos/drip-video-5.mp4" type="video/mp4">
-          </video>
-        </div>
+      <div class="reveal-up" style="transition-delay: 100ms;">
+        <span class="inline-block bg-[#0D0D0D] text-[#F8F8F8] font-primary font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] px-4 py-2 border-2 border-[#0D0D0D] shadow-[4px_4px_0px_0px_#0004ff]">
+          Project 02
+        </span>
+      </div>
     </header>
 
-    <section class="px-6 md:px-10 max-w-[1400px] mx-auto mb-20 md:mb-40 reveal-up">
-      <h2 class="font-sans text-[2rem] md:text-[4rem] lg:text-[4.5rem] leading-[1.05] tracking-tight text-[#080808] font-medium max-w-[1200px]">
-        Motion timing follows mechanical easing and the unpredictable properties of carbonation, reinforcing the sensory qualities of the beverage.
-      </h2>
+    <section class="px-5 md:px-10 max-w-[1800px] mx-auto mb-20 md:mb-32 reveal-up">
+      <div class="w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden bg-[#e0e0e0] border-2 border-[#0D0D0D] shadow-[8px_8px_0px_0px_#0D0D0D]">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <source src="/videos/drip-video-5.mp4" type="video/mp4">
+        </video>
+      </div>
     </section>
 
-    <section class="px-6 md:px-10 max-w-[1800px] mx-auto pb-32">
+    <section class="px-5 md:px-10 max-w-[1600px] mx-auto mb-20 md:mb-32 reveal-up">
+      <div class="border-l-4 border-[#0004ff] pl-5 md:pl-8 py-2">
+        <h2 class="font-primary font-black text-[1.75rem] md:text-[3rem] lg:text-[4rem] leading-[1.05] tracking-tight text-[#0D0D0D] uppercase max-w-5xl">
+          Motion follows <span class="text-[#0004ff] font-thin italic lowercase tracking-normal">mechanical easing</span> and carbonation.
+        </h2>
+      </div>
+    </section>
+
+    <section class="px-5 md:px-10 max-w-[1800px] mx-auto pb-32">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         
-        <div class="lg:col-span-4">
-          <div class="lg:sticky lg:top-32 flex flex-col gap-12 md:gap-16 pb-12">
+        <aside class="lg:col-span-4">
+          <div class="lg:sticky lg:top-32 flex flex-col gap-10 md:gap-14 pb-12 border-t-2 border-[#0D0D0D] pt-8">
             
             <div class="reveal-up">
-              <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-4 text-[#888888]">The Brief</h3>
-              <p class="font-sans text-base md:text-lg text-[#080808] leading-relaxed">
-                Establish typography as a reactive liquid system, where motion follows compression, inertia, and elastic release, ensuring behavior reflects actual viscosity rather than strict mechanical animation.
+              <h3 class="inline-block bg-[#F8F8F8] text-[#0D0D0D] font-primary font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] px-2 py-1 border border-[#0D0D0D] mb-4">The Brief</h3>
+              <p class="font-primary text-sm md:text-base text-[#6E6E6E] leading-relaxed tracking-wide">
+                Establish typography as a reactive liquid system. Motion must follow compression, inertia, and elastic release—behavior reflecting actual viscosity.
               </p>
             </div>
 
             <div class="reveal-up">
-              <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-4 text-[#888888]">Stack & Approach</h3>
-              <ul class="font-sans text-base text-[#080808] space-y-1.5">
-                <li>Figma & Illustrator</li>
-                <li>After Effects</li>
-                <li>Cavalry</li>
-                <li>Ableton (Sound Design)</li>
+              <h3 class="inline-block bg-[#F8F8F8] text-[#0D0D0D] font-primary font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] px-2 py-1 border border-[#0D0D0D] mb-4">Tech Stack</h3>
+              <ul class="font-primary font-semibold text-[11px] md:text-xs text-[#0D0D0D] space-y-2 uppercase tracking-[0.15em]">
+                <li class="border-b border-[#0D0D0D]/10 pb-1">Figma & Illustrator</li>
+                <li class="border-b border-[#0D0D0D]/10 pb-1">After Effects</li>
+                <li class="border-b border-[#0D0D0D]/10 pb-1">Cavalry</li>
+                <li class="border-b border-[#0D0D0D]/10 pb-1">Ableton Live</li>
               </ul>
             </div>
 
             <div class="reveal-up space-y-8">
               <div>
-                <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-3 text-[#888888]">Typography System</h3>
-                <div class="font-mono text-sm text-[#080808]">Space Mono</div>
+                <h3 class="inline-block bg-[#F8F8F8] text-[#0D0D0D] font-primary font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] px-2 py-1 border border-[#0D0D0D] mb-4">Typography</h3>
+                <div class="font-primary font-light text-sm uppercase tracking-widest text-[#0D0D0D]">Space Mono</div>
               </div>
 
               <div>
-                <h3 class="font-mono text-[9px] md:text-[10px] uppercase tracking-widest mb-4 text-[#888888]">Brand Palette</h3>
-                <div class="flex gap-2">
-                  <div class="w-8 h-8 bg-[#F8A003]" title="#F8A003"></div>
-                  <div class="w-8 h-8 bg-[#739700]" title="#739700"></div>
-                  <div class="w-8 h-8 bg-[#120F03]" title="#120F03"></div>
-                  <div class="w-8 h-8 bg-[#E8EBDC] border border-[#E2E2E2]" title="#E8EBDC"></div>
-                  <div class="w-8 h-8 bg-[#FDB918]" title="#FDB918"></div>
+                <h3 class="inline-block bg-[#F8F8F8] text-[#0D0D0D] font-primary font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] px-2 py-1 border border-[#0D0D0D] mb-4">Palette</h3>
+                <div class="flex gap-3">
+                  <div class="w-8 h-8 bg-[#F8A003] border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]"></div>
+                  <div class="w-8 h-8 bg-[#739700] border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]"></div>
+                  <div class="w-8 h-8 bg-[#120F03] border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]"></div>
+                  <div class="w-8 h-8 bg-[#E8EBDC] border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]"></div>
+                  <div class="w-8 h-8 bg-[#FDB918] border-2 border-[#0D0D0D] shadow-[2px_2px_0px_0px_#0D0D0D]"></div>
                 </div>
               </div>
             </div>
 
           </div>
-        </div>
+        </aside>
 
-        <div class="lg:col-span-8 space-y-16 md:space-y-32">
+        <article class="lg:col-span-8 space-y-12 md:space-y-20">
           
-          <div class="reveal-up overflow-hidden bg-[#E2E2E2]">
-            <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
+          <div class="reveal-up overflow-hidden bg-[#e0e0e0] border-2 border-[#0D0D0D]">
+            <video autoplay muted loop playsinline class="w-full h-auto block">
               <source src="/videos/drip-video-1.mp4" type="video/mp4">
             </video>
           </div>
 
-          <div class="reveal-up md:w-4/5 ml-auto">
-             <p class="font-sans text-xl md:text-3xl leading-snug text-[#080808] tracking-tight">
+          <div class="reveal-up bg-[#0D0D0D] text-[#F8F8F8] p-6 md:p-10 border-2 border-[#0D0D0D] shadow-[6px_6px_0px_0px_#0004ff]">
+             <p class="font-primary font-light text-lg md:text-xl leading-snug tracking-wide">
                By blending high-contrast palettes with snappy, elastic motion, the identity system feels simultaneously highly structured and refreshingly chaotic.
              </p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
-            <div class="md:col-span-5 reveal-up overflow-hidden bg-[#E2E2E2]">
-              <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
+            <div class="md:col-span-5 reveal-up overflow-hidden bg-[#e0e0e0] border-2 border-[#0D0D0D]">
+              <video autoplay muted loop playsinline class="w-full h-auto block">
                 <source src="/videos/drip-video-2.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="md:col-span-7 reveal-up overflow-hidden bg-[#E2E2E2]">
-              <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
+            <div class="md:col-span-7 reveal-up overflow-hidden bg-[#e0e0e0] border-2 border-[#0D0D0D]">
+              <video autoplay muted loop playsinline class="w-full h-auto block">
                 <source src="/videos/drip-video-3.mov" type="video/mp4">
               </video>
             </div>
           </div>
 
-          <div class="reveal-up overflow-hidden bg-[#E2E2E2]">
-            <video autoplay muted loop playsinline class="w-full h-auto block scale-[1.01]">
+          <div class="reveal-up overflow-hidden bg-[#e0e0e0] border-2 border-[#0D0D0D]">
+            <video autoplay muted loop playsinline class="w-full h-auto block">
               <source src="/videos/drip-video-4.mp4" type="video/mp4">
             </video>
           </div>
 
-        </div>
+        </article>
       </div>
     </section>
 
-    <footer class="w-full bg-[#080808] px-6 md:px-10 py-16 reveal-up">
-        <div class="max-w-[1800px] mx-auto flex flex-col gap-8 md:flex-row justify-between items-start md:items-center font-mono text-[10px] md:text-xs uppercase tracking-widest text-[#888888]">
-          <p class="m-0">© Curious Robert 2026</p>
-          <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2">Bucharest / Global</p>
-          <a href="/projects/promptlab" class="text-[#fcfcff] hover:opacity-70 transition-opacity no-underline flex items-center gap-2">
-            Next Project <span>→</span>
-          </a>
-       </div>
+    <footer class="w-full bg-[#0D0D0D] px-5 md:px-10 py-10 md:py-12 border-t-4 border-[#0004ff]">
+      <div class="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6 font-primary text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#888888]">
+        <p class="m-0 font-semibold">© Curious Robert 2026</p>
+        <p class="m-0 md:absolute md:left-1/2 md:-translate-x-1/2 font-bold text-[#F8F8F8]">Bucharest / Global</p>
+        <a href="/projects/semn" class="bg-transparent border-none text-[#F8F8F8] hover:text-[#0004ff] transition-colors cursor-pointer font-primary p-0 text-[10px] md:text-xs uppercase tracking-[0.2em] font-black flex items-center gap-2 group w-fit no-underline">
+          Next Project <span class="text-sm font-light group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
     </footer>
   </main>
 </Layout>
 
-<style>
-  /* Premium Easing for Scroll Reveals */
-  .reveal-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1.2s cubic-bezier(0.215, 0.610, 0.355, 1), 
-                transform 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
-  }
-  .reveal-up.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Text selection styling for a premium feel */
-  ::selection {
-    background: #080808;
-    color: #fcfcff;
-  }
-</style>
-
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
+  document.addEventListener('astro:page-load', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.05, 
+      rootMargin: "0px 0px -50px 0px" 
     });
-  }, { 
-    threshold: 0.1, 
-    rootMargin: "0px 0px -50px 0px" 
-  });
 
-  document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+    setTimeout(() => {
+      document.querySelectorAll('.reveal-up:not(.is-visible)').forEach((el) => observer.observe(el));
+    }, 50);
+  });
 </script>
