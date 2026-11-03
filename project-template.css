@@ -1,0 +1,73 @@
+/* ============================================================
+   cursioustudio // project template styles
+   ============================================================ */
+
+/* Always reserve the scrollbar → the lightbox can never shift
+   the page horizontally. */
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+/* ---------- Section reveal (visible by default, JS enhances) ---------- */
+.reveal {
+    opacity: 1;
+}
+
+html.js-anim .reveal:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+html.js-anim .reveal.is-visible {
+    animation: revealUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Canvases ---------- */
+canvas {
+    display: block;
+    image-rendering: auto;
+}
+
+#hero-canvas,
+#anim-canvas-1,
+#anim-canvas-2 {
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- Gallery items ---------- */
+.gallery-item {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html.js-anim .reveal {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

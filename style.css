@@ -1,0 +1,190 @@
+/* ============================================================
+   cursioustudio // custom styles & animations (final)
+   ============================================================ */
+
+/* ---------- Prevent ANY horizontal shift on scroll-lock ----------
+   The scrollbar space is ALWAYS reserved, so opening modals or
+   the lightbox never changes the viewport width. */
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+/* ---------- STRUCTURAL FALLBACKS ----------
+   Mirror critical Tailwind utilities in plain CSS. If the
+   Tailwind CDN is slow/blocked, the grid still renders and
+   hover/focus still works. */
+#grid-container .tile {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background-color: #002BFF;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    scroll-margin: 2rem;
+}
+
+#grid-container .tile-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+#grid-container .tile-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+#grid-container .tile-preview {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #FF1E1E;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Pure-CSS hover/focus reveal (works even without Tailwind groups) */
+#grid-container .tile:hover > .tile-preview,
+#grid-container .tile:focus-within > .tile-preview {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#grid-container .tile:hover > .tile-canvas,
+#grid-container .tile:hover > .tile-badge {
+    opacity: 0;
+}
+
+/* ---------- Tile entrance reveal (ERASE-PROOF) ----------
+   Tiles are visible by default. The hidden start state only
+   exists while JS is running AND the tile hasn't been revealed.
+   Once revealed, opacity is pinned — the grid can never vanish. */
+.tile {
+    opacity: 1;
+}
+
+html.js-anim .tile:not(.is-visible) {
+    opacity: 0;
+}
+
+html.js-anim .tile.is-visible {
+    animation: tileIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-play-state: running;
+}
+
+@keyframes tileIn {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Marquee strip ---------- */
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: scrollText 25s linear infinite;
+    will-change: transform;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* ---------- Canvas polish ---------- */
+canvas {
+    display: block;
+    image-rendering: auto;
+}
+
+/* ---------- Form inline errors (filled by script.js) ---------- */
+.form-error {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #dc2626;
+}
+
+.form-error.is-hidden {
+    display: none;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #dc2626;
+}
+
+/* ---------- Modal content scrollbar ---------- */
+.modal-overlay .overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-overlay .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgb(51 65 85 / 0.5);
+    border-radius: 9999px;
+}
+
+.modal-overlay .overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ---------- Respect reduced-motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html.js-anim .tile,
+    .animate-marquee {
+        animation: none !important;
+    }
+
+    html.js-anim .tile {
+        opacity: 1 !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

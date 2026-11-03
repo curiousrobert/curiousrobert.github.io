@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="cursioustudio — Motion & visual experience design studio. 3D, VFX, kinetic type.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Content-Security-Policy: blocks unknown scripts, connections, plugins and frames -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://unpkg.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
+    <title>cursioustudio // Motion & Visual Experience Design</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles & animations -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Main logic (deferred; no inline handlers in this document) -->
+    <script src="script.js" defer></script>
+
+    <script>
+        /* Tailwind theme config (safe, hardcoded values only) */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        studioBlue: '#002BFF',
+                        studioRed: '#FF1E1E',
+                        studioDark: '#0A0A0B',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden antialiased selection:bg-studioRed selection:text-white">
+
+    <!-- Skip link for keyboard users -->
+    <a href="#work" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:border focus:border-slate-200 focus:text-sm focus:font-semibold">
+        Skip to work
+    </a>
+
+    <!-- HEADER -->
+    <header class="w-full px-6 py-6 md:px-16 md:py-8 flex flex-wrap justify-between items-center gap-x-4 gap-y-3 z-50">
+        <a href="#" class="group flex items-center shrink-0">
+            <span class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-studioRed transition-colors duration-300">cursioustudio</span>
+        </a>
+
+        <nav class="flex items-center gap-5 md:gap-10 text-sm font-medium">
+            <button type="button" data-modal-toggle="info-modal" class="hover:text-studioRed transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioRed focus-visible:ring-offset-2 focus-visible:rounded">Info</button>
+            <button type="button" data-modal-toggle="contact-modal" class="hover:text-studioRed transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioRed focus-visible:ring-offset-2 focus-visible:rounded">Contact</button>
+            <a href="#work" class="px-4 py-2 bg-slate-100 hover:bg-studioBlue hover:text-white rounded-full transition-all duration-300 hidden sm:inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioBlue focus-visible:ring-offset-2">
+                Selected Work
+            </a>
+        </nav>
+    </header>
+
+    <!-- MAIN GRID (responsive: 1 / 2 / 3 / 4 columns) -->
+    <main id="work" class="flex-1 flex flex-col justify-center items-center px-4 my-10 md:my-16 gap-10 scroll-mt-16">
+
+        <ul id="grid-container" aria-label="Selected projects" class="grid w-full max-w-7xl mx-auto list-none grid-cols-1 gap-4 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-6"></ul>
+
+        <!-- Hover preview indicator -->
+        <div id="central-preview-display" class="w-full max-w-xl px-4 text-center min-h-[52px] flex flex-col items-center justify-center transition-all duration-300">
+            <p id="preview-title" class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-1">Hover over any square to preview project</p>
+            <h3 id="preview-name" class="text-lg font-bold text-slate-900">01 / 14 Interactive Work</h3>
+        </div>
+
+    </main>
+
+    <!-- MARQUEE STRIP -->
+    <div class="overflow-hidden border-y border-slate-100 py-4" aria-hidden="true">
+        <div class="animate-marquee whitespace-nowrap">
+            <div class="flex items-center gap-8 pr-8 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                <span>Motion Design</span><span class="text-studioRed">●</span>
+                <span>3D Environments</span><span class="text-studioRed">●</span>
+                <span>Kinetic Type</span><span class="text-studioRed">●</span>
+                <span>VFX</span><span class="text-studioRed">●</span>
+                <span>Real-time Interactive</span><span class="text-studioRed">●</span>
+                <span>Art Direction</span><span class="text-studioRed">●</span>
+            </div>
+            <div class="flex items-center gap-8 pr-8 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                <span>Motion Design</span><span class="text-studioRed">●</span>
+                <span>3D Environments</span><span class="text-studioRed">●</span>
+                <span>Kinetic Type</span><span class="text-studioRed">●</span>
+                <span>VFX</span><span class="text-studioRed">●</span>
+                <span>Real-time Interactive</span><span class="text-studioRed">●</span>
+                <span>Art Direction</span><span class="text-studioRed">●</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="w-full pb-10 pt-10 px-6">
+        <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="inline-block px-3 py-1 bg-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-600 rounded-full">
+                Studio Manifest
+            </span>
+            <h2 class="text-2xl md:text-3xl font-light leading-relaxed text-slate-800">
+                We design digital motion, 3D brand environments, and kinetic visual systems that elevate modern brands through movement.
+            </h2>
+            <p class="text-slate-500 text-sm max-w-xl mx-auto">
+                Based globally. Collaborating with forward-thinking artists, tech leaders, and luxury fashion brands.
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4 px-2">
+            <div>&copy; <span id="year"></span> cursioustudio. All rights reserved.</div>
+            <div class="flex gap-6 font-medium">
+                <a href="#" class="hover:text-studioBlue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioBlue focus-visible:ring-offset-2 focus-visible:rounded">Instagram</a>
+                <a href="#" class="hover:text-studioBlue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioBlue focus-visible:ring-offset-2 focus-visible:rounded">Vimeo</a>
+                <a href="#" class="hover:text-studioBlue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioBlue focus-visible:ring-offset-2 focus-visible:rounded">Behance</a>
+                <a href="#" class="hover:text-studioBlue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioBlue focus-visible:ring-offset-2 focus-visible:rounded">X / Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INFO MODAL -->
+    <div id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" aria-hidden="true" class="modal-overlay fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none invisible transition-[opacity,visibility] duration-300 active:opacity-100 active:pointer-events-auto active:visible">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 relative shadow-2xl">
+            <button type="button" data-focus data-modal-close="info-modal" aria-label="Close" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-studioRed transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioRed">
+                <img src="https://unpkg.com/lucide-static@1.44.0/icons/x.svg" alt="" class="w-4 h-4" aria-hidden="true">
+            </button>
+            <h3 id="info-title" class="text-2xl font-bold mb-4 text-slate-900">About Studio</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                We are an independent motion design studio specializing in art direction, 3D visual effects, real-time interactive design, and dynamic typography systems.
+            </p>
+            <div class="space-y-2 text-sm border-t border-slate-100 pt-4">
+                <div class="flex justify-between gap-4 text-slate-500">
+                    <span class="shrink-0">Capabilities:</span>
+                    <span class="text-slate-800 font-medium text-right">3D Animation, VFX, Kinetic Type</span>
+                </div>
+                <div class="flex justify-between gap-4 text-slate-500">
+                    <span class="shrink-0">Software:</span>
+                    <span class="text-slate-800 font-medium text-right">Houdini, Cinema 4D, Unreal Engine</span>
+                </div>
+                <div class="flex justify-between gap-4 text-slate-500">
+                    <span class="shrink-0">Recognition:</span>
+                    <span class="text-slate-800 font-medium text-right">Awwwards, FWA, Red Dot 2025</span>
+                </div>
+            </div>
+            <button type="button" data-modal-close="info-modal" class="mt-6 w-full py-3 bg-studioBlue text-white rounded-xl font-medium hover:bg-blue-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioBlue focus-visible:ring-offset-2">Close</button>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title" aria-hidden="true" class="modal-overlay fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none invisible transition-[opacity,visibility] duration-300 active:opacity-100 active:pointer-events-auto active:visible">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 relative shadow-2xl">
+            <button type="button" data-modal-close="contact-modal" aria-label="Close" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-studioRed transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioRed">
+                <img src="https://unpkg.com/lucide-static@1.44.0/icons/x.svg" alt="" class="w-4 h-4" aria-hidden="true">
+            </button>
+            <h3 id="contact-title" class="text-2xl font-bold mb-2 text-slate-900">Let's Create Together</h3>
+            <p class="text-slate-600 text-sm mb-6">Available for freelance commissions and full studio projects.</p>
+
+            <form id="contact-form" novalidate class="space-y-4">
+                <div>
+                    <label for="contact-name" class="block text-xs font-semibold text-slate-500 mb-1">YOUR NAME</label>
+                    <input id="contact-name" name="name" type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:border-studioBlue text-sm">
+                </div>
+                <div>
+                    <label for="contact-email" class="block text-xs font-semibold text-slate-500 mb-1">EMAIL ADDRESS</label>
+                    <input id="contact-email" name="email" type="email" data-focus required class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:border-studioBlue text-sm">
+                </div>
+                <div>
+                    <label for="contact-details" class="block text-xs font-semibold text-slate-500 mb-1">PROJECT DETAILS</label>
+                    <textarea id="contact-details" name="details" rows="3" required class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:border-studioBlue text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-studioRed text-white rounded-xl font-medium hover:bg-red-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-studioRed focus-visible:ring-offset-2">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-title" aria-hidden="true" class="modal-overlay fixed inset-0 bg-slate-950/90 backdrop-blur-lg z-50 flex items-center justify-center p-4 sm:p-8 opacity-0 pointer-events-none invisible transition-[opacity,visibility] duration-300 active:opacity-100 active:pointer-events-auto active:visible">
+        <div class="bg-slate-900 rounded-2xl max-w-4xl w-full text-white overflow-hidden relative shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
+            <button type="button" data-focus data-modal-close="project-modal" aria-label="Close" class="absolute top-4 right-4 z-10 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:bg-studioRed transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                <img src="https://unpkg.com/lucide-static@1.44.0/icons/x.svg" alt="" class="w-4 h-4" aria-hidden="true">
+            </button>
+
+            <div class="md:w-3/5 bg-black relative flex items-center justify-center h-64 sm:h-72 md:h-auto md:self-stretch min-h-[220px] shrink-0">
+                <canvas id="modal-canvas" class="w-full h-full block" aria-hidden="true"></canvas>
+                <div class="absolute bottom-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded text-xs tracking-wider uppercase text-slate-300">
+                    Live Render Preview
+                </div>
+            </div>
+
+            <div class="md:w-2/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto min-h-0">
+                <div>
+                    <span id="modal-category" class="text-xs font-bold text-studioRed tracking-widest uppercase">Motion Graphics</span>
+                    <h2 id="project-title" class="text-2xl sm:text-3xl font-bold mt-2 mb-4">Project Title</h2>
+                    <p id="modal-desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Detailed overview of the motion research, frame rate choices, 3D shaders, and narrative direction developed for this project.
+                    </p>
+
+                    <div class="space-y-3 text-xs border-t border-slate-800 pt-4">
+                        <div class="flex justify-between gap-4">
+                            <span class="text-slate-500 shrink-0">Client:</span>
+                            <span id="modal-client" class="text-slate-200 font-semibold text-right">Brand Name</span>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <span class="text-slate-500 shrink-0">Year:</span>
+                            <span id="modal-year" class="text-slate-200 font-semibold">2026</span>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <span class="text-slate-500 shrink-0">Tools:</span>
+                            <span id="modal-tools" class="text-slate-200 font-semibold text-right">After Effects, Houdini</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-slate-800 flex gap-3">
+                    <button type="button" data-toast="Opening full case study reel…" class="flex-1 py-3 bg-studioBlue hover:bg-blue-600 rounded-xl text-center text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                        Launch Reel
+                    </button>
+                    <button type="button" data-modal-close="project-modal" class="px-4 py-3 border border-slate-700 hover:border-slate-500 rounded-xl text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] bg-slate-900 text-white text-sm px-5 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 pointer-events-none translate-y-2 max-w-[90vw] text-center">
+    </div>
+
+</body>
+</html>
