@@ -1,32 +1,48 @@
 /* ============================================================
-   cursioustudio // custom styles & animations (final)
+   curioustudio // custom styles & animations (refined editorial)
    ============================================================ */
 
-/* ---------- Prevent ANY horizontal shift on scroll-lock ----------
-   The scrollbar space is ALWAYS reserved, so opening modals or
-   the lightbox never changes the viewport width. */
+:root {
+    --bg-primary: #0a0a0a;
+    --surface-tile: #141414;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.8);
+    --text-primary: #f5f5f7;
+    --text-muted: rgba(245, 245, 247, 0.6);
+    --accent-red: #FF4A3D;
+    --accent-blue: #FFE347;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ---------- Prevent ANY horizontal shift on scroll-lock ---------- */
 html {
     overflow-y: scroll;
     scrollbar-gutter: stable;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    color-scheme: dark;
 }
 
-/* ---------- STRUCTURAL FALLBACKS ----------
-   Mirror critical Tailwind utilities in plain CSS. If the
-   Tailwind CDN is slow/blocked, the grid still renders and
-   hover/focus still works. */
+/* ---------- STRUCTURAL FALLBACKS & TILE ARCHITECTURE ---------- */
 #grid-container .tile {
     position: relative;
     aspect-ratio: 1 / 1;
     width: 100%;
-    background-color: #002BFF;
+    background-color: var(--surface-tile);
     overflow: hidden;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-select: none;
     scroll-margin: 2rem;
+    transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#grid-container .tile:hover {
+    border-color: var(--border-hover);
 }
 
 #grid-container .tile-canvas {
@@ -35,20 +51,22 @@ html {
     width: 100%;
     height: 100%;
     display: block;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
+    opacity: 0.9;
+    filter: grayscale(20%) contrast(105%);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
 }
 
 #grid-container .tile-badge {
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 12px;
+    left: 12px;
     z-index: 10;
     pointer-events: none;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: ui-monospace, monospace;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
     font-size: 10px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
 }
 
 #grid-container .tile-preview {
@@ -58,33 +76,34 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #FF1E1E;
-    color: #fff;
+    padding: 24px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 
-/* Pure-CSS hover/focus reveal (works even without Tailwind groups) */
+/* Pure-CSS hover/focus reveal */
 #grid-container .tile:hover > .tile-preview,
 #grid-container .tile:focus-within > .tile-preview {
     opacity: 1;
     pointer-events: auto;
 }
 
-#grid-container .tile:hover > .tile-canvas,
-#grid-container .tile:hover > .tile-badge {
-    opacity: 0;
+#grid-container .tile:hover > .tile-canvas {
+    opacity: 0.25;
+    filter: grayscale(0%) contrast(100%);
 }
 
-/* ---------- Tile entrance reveal (ERASE-PROOF) ----------
-   Tiles are visible by default. The hidden start state only
-   exists while JS is running AND the tile hasn't been revealed.
-   Once revealed, opacity is pinned — the grid can never vanish. */
+#grid-container .tile:hover > .tile-badge {
+    color: var(--text-primary);
+}
+
+/* ---------- Tile entrance reveal (ERASE-PROOF) ---------- */
 .tile {
     opacity: 1;
 }
@@ -94,14 +113,14 @@ html.js-anim .tile:not(.is-visible) {
 }
 
 html.js-anim .tile.is-visible {
-    animation: tileIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: tileIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-play-state: running;
 }
 
 @keyframes tileIn {
     from {
         opacity: 0;
-        transform: translateY(26px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -122,7 +141,7 @@ html.js-anim .tile.is-visible {
 .animate-marquee {
     display: flex;
     width: 200%;
-    animation: scrollText 25s linear infinite;
+    animation: scrollText 30s linear infinite;
     will-change: transform;
 }
 
@@ -133,16 +152,17 @@ html.js-anim .tile.is-visible {
 /* ---------- Canvas polish ---------- */
 canvas {
     display: block;
-    image-rendering: auto;
+    image-rendering: high-dpi;
 }
 
-/* ---------- Form inline errors (filled by script.js) ---------- */
+/* ---------- Form inline errors ---------- */
 .form-error {
     display: block;
-    margin-top: 0.25rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #dc2626;
+    margin-top: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--accent-red);
 }
 
 .form-error.is-hidden {
@@ -151,17 +171,17 @@ canvas {
 
 input[aria-invalid="true"],
 textarea[aria-invalid="true"] {
-    border-color: #dc2626;
+    border-color: var(--accent-red) !important;
 }
 
 /* ---------- Modal content scrollbar ---------- */
 .modal-overlay .overflow-y-auto::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
 }
 
 .modal-overlay .overflow-y-auto::-webkit-scrollbar-thumb {
-    background: rgb(51 65 85 / 0.5);
-    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0px;
 }
 
 .modal-overlay .overflow-y-auto::-webkit-scrollbar-track {
